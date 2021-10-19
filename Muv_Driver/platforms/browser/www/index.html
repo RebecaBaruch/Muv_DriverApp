@@ -41,29 +41,24 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <!-- Bootstrap -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello World</title>
+    <title>Muv</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col">
+            <div class="container-index">
                 <img src="img/logo_muv.png" alt="logo_muv">
             </div>    
-        </div>
     </div>
-
-    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        app.initialize();
+        setTimeout(function(){
+        window.location.href = "templates/login.html"
+        },3000)
     </script>
 </body>
 
