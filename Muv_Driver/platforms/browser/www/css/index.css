@@ -21,11 +21,36 @@
     margin: 0;
 }
 
+/* classes formatação padrão */
 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
 }
 
+.btn{
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(190, 190, 190);
+}
+
+.link-txt{
+    text-decoration: none;
+    color: #00A3FF;
+}
+
+.muv-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* formatação da index */
 .container-index{
     width: 100%;
     height: 100%;
@@ -33,4 +58,63 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(0deg, rgba(1, 44, 196, 0.64) -0.17%, #0033E8 30.06%, #033BFF 100%), #0036F5;;
+}
+
+/* formatação da pre_login.html */
+
+.preLogin-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    height: 80%;
+}
+
+.foguete-avatar{
+    width: 80%;
+}
+
+.container-btn{
+    width: 100%;
+}
+
+.btn-account{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    background-color: #0036F3;
+}
+
+.btn-account > h3{
+    font-weight: bolder;
+    color: white;
+}
+
+.row-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.btn-fb, .btn-google{
+    width: 48%;
+    margin-bottom: 2.5rem;
+}
+
+.login-p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    color: #121212;
 }
