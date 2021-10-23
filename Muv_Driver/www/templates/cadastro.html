@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
     <title>Cadastro</title>
 </head>
 <body>
     <div class="container">
-        <div>
-            <h1>Crie uma conta</h1>
+        <div class="cadastro-container">
 
-            <form action="">
-                <input type="email" name="E-mail" placeholder="E-mail" id="">
+            <form action="" class="cadastro-form">
 
-                <input type="password" name="Senha" placeholder="Senha" id="">
+                <h1>Crie uma conta</h1>
 
-                <input type="tel" name="Número do celular" placeholder="Número do celular" id="">
+                <input type="email" name="E-mail" placeholder="E-mail" id="" class="input">
 
-                <input type="submit" value="Next">
+                <input type="password" name="Senha" placeholder="Senha" id="" class="input">
+
+                <input type="tel" name="Número do celular" placeholder="Número do celular" id="" class="input phone-input">
+
+                <input type="submit" value="Next" class="btn next-input">
             </form>
 
-            <a href="#"> Já possui uma conta? Faça o login</a>
+            <p class="login-p">
+                Já possui uma conta? 
+                <a href="#" class="link-txt">
+                    Faça o login
+                </a>
+            </p>
 
             <footer>
                 <img src="../img/logo-muv-azul.png" alt="logo-muv">

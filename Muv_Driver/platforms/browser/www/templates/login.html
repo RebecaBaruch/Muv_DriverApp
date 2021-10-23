@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
     <title>Login</title>
 </head>
 <body>
     <div class="container">
         <div class="login-container">
-            <form action="">
+
+            <form class="login-form" action="">
                 <h1>Login</h1>
 
-                <input type="email" name="E-mail" placeholder="E-mail" id="">
+                <div class="input-box">
+                    <input type="email" name="E-mail" placeholder="E-mail" id="" class="input">
 
-                <input type="password" name="Senha" placeholder="Senha" id="">
+                    <input type="password" name="Senha" placeholder="Senha" id="" class="input password-input">
 
-                <input type="submit" value="OK">
+                </div>
+        
+                <input type="submit" value="OK" class="ok-input btn">
             </form>
 
-            <a href="#"> Ainda não possui uma conta? Crie uma conta</a>
+            <p class="login-p">
+                Ainda não possui uma conta?
+                <a href="#" class="link-txt">
+                    Crie uma conta
+                </a>
+            </p>
 
             <footer>
                 <img src="../img/logo-muv-azul.png" alt="logo-muv">
