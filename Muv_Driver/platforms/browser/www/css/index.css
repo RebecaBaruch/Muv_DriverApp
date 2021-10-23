@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+ 
 *{
     padding: 0;
     margin: 0;
@@ -36,6 +39,10 @@
     border: none;
     border-radius: 10px;
     background-color: #CDCDCD;
+}
+
+.blue-title{
+    color: #0033E8;
 }
 
 .link-txt{
@@ -240,4 +247,49 @@
 
 .cadastro-form > .login-txt{
     margin-top: -1rem;
+}
+
+/* formatação use_terms.html */
+
+.useTerms-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 65%;
+    height: 85%;
+
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.useTerms-container > h1{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.useTerms-container> h2{
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.useTerms-container > p, li{
+    color: #3C476C;
+}
+
+.long-container{
+    height: 120vh;
+}
+
+.terms-link{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    color: #0035F3;
+    margin: 1rem 0 1.2rem 0;
+}
+
+.terms-btn{
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0035F3;
+    color: white;
 }
