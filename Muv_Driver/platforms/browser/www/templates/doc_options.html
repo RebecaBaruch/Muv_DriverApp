@@ -4,46 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
+    <title>Documentos</title>
 </head>
-<body>
+<body class="doc-body">
     <div class="container">
         <div class="doc-container">
             
-            <h1>Clique nos ícones abaixo</h1>
-            <p>forneça os respectivos docmentos para continuar</p>
+            <div class="txtDoc-box">
+                <h1>Clique nos ícones abaixo</h1>
+                <p>forneça os respectivos docmentos para continuar</p>
+            </div>
 
-            <div class="doc-box">
-                
-                <div class="rg-box">
-                    <h2>RG</h2>
+            <div class="docInput-container">
+                <div class="doc-box rg-box">
+                    <label for="rgFile" class="label-box">
+                        <p>RG</p> 
+                        
+                        <figure>
+                            <img src="../img/rg-icon.png" alt="rg-icon">
+                        </figure>
+                    </label>
 
-                    <input type="checkbox" name="rg-check" id="">
+                    <input type="file" name="rg-file" id="rgFile" class="file-input">
                 </div>
 
-                <div class="cnh-box">
-                    <h2>CNH</h2>
+                <div class="doc-box cnh-box">
+                    <label for="cnhFile" class="label-box">
+                        <p>CNH</p> 
+                        
+                        <figure>
+                            <img src="../img/cnh-icon.png" alt="rg-icon">
+                        </figure>
+                    </label>
 
-                    <input type="checkbox" name="cnh-check" id="">
+                    <input type="file" name="cnh-file" id="cnhFile" class="file-input">
                 </div>
 
-                <div class="crlv-box">
-                    <h2>CRLV</h2>
+                <div class="doc-box crlv-box">
+                    <label for="cnhFile" class="label-box">
+                        <p>CRLV</p> 
+                        
+                        <figure>
+                            <img src="../img/crlv-icon.png" alt="rg-icon">
+                        </figure>
+                    </label>
 
-                    <input type="checkbox" name="crlv-check" id="">
+                    <input type="file" name="cnh-file" id="cnhFile" class="file-input">
                 </div>
 
-                <div class="aac-box">
-                    <h2>Atestado de Antecendentes Criminais</h2>
+                <div class="doc-box aac-box">
+                    <label for="cnhFile" class="label-box">
+                        <p>Atestado de Antecendentes Criminais</p> 
+                        
+                        <figure>
+                            <img src="../img/aac-icon.png" alt="rg-icon">
+                        </figure>
+                    </label>
 
-                    <input type="checkbox" name="aac-check" id="">
+                    <input type="file" name="cnh-file" id="cnhFile" class="file-input">
                 </div>
             </div>
 
-            <footer>
-                <img src="../img/mini-logo-branca.png" alt="logo-muv">
+            <footer class="doc-footer">
+                <img src="../img/mini-logo-branca.png" alt="logo-muv" class="logo-footer">
 
-                <button>OK</button>
+                <button class="btn okGreen-btn okDoc-btn">OK</button>
             </footer>
         </div>
     </div>

@@ -50,6 +50,14 @@
     color: #00A3FF;
 }
 
+.okGreen-btn{
+    padding: 1rem 1.7rem;
+    background-color: #06BF7D;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0px 10px 40px rgba(11, 255, 235, 0.315);
+}
+
 .muv-footer{
     display: flex;
     justify-content: center;
@@ -290,6 +298,190 @@
 .terms-btn{
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
-    background-color: #0035F3;
+    background-color: #1945e4;
     color: white;
+}
+
+/* formatação pre_doc.html */
+
+.preDoc-body{
+    background-color: #1945e4;
+}
+
+.preDoc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+.txt-img{
+    padding: 8rem 0 0 0;
+}
+
+.txt-img > p {
+    width: 55%;
+    margin: 0 0rem 2rem 4rem;
+    font-family: 'KeepCalm', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.txt-img > img{
+    width: 11rem;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* formatação doc_options.html */
+
+.doc-body{
+    background-color: #1945e4;
+}
+
+.doc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    width: 95%;
+}
+
+.txtDoc-box{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.txtDoc-box > h1{
+    margin-bottom: 0.7rem;
+}
+
+.docInput-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 68%;
+    width: 100%;
+}
+
+.doc-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 75%;
+}
+
+.label-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-between;
+    padding: 1.4rem 1.2rem;
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.doc-box{
+    color: #1945e4;
+    font-weight: 600;
+}
+
+.aac-box{
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.file-input{
+    display: none;
+}
+
+.okDoc-btn{
+    display: none;
+}
+
+.doc-footer{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* formatação pre_photo.hmtl*/
+.prePhoto-body{
+    background-color: #1945e4;
+}
+
+.inst-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    width: 95%;
+}
+
+.inst-1, .inst-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inst-1 > figure{
+    display: flex;
+    justify-content: right;
+}
+
+.inst-1 > p{
+    margin:1rem 0 0 2rem;
+    width: 80%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.inst-2{
+    align-items: center;
+    margin-top: 18vh;
+    height: 40%;
+}
+
+.obs-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 22px;
+    width: 70%;
+    border-radius: 15px;
+
+    background-color: white;
+}
+
+.obs-box > header {
+    padding: 1.2rem 2rem;
+    border-radius: 15px 15px 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: #F17400;
+}
+
+.obs-box > p{
+    padding: 1.5rem 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    color: #393939;
+}
+
+.inst-2{
+    display: none;
 }
