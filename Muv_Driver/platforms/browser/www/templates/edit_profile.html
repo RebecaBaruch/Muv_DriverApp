@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
+    <title>Edit Profile</title>
+</head>
+<body class="profile_body">
+    <div class="container">
+        <div class="profile-container">
+            <header>
+                <button class="back-btn">
+                    <img src="../img/back-icon.png" alt="back-button-icon">
+                </button>
+
+                <button class="next-btn">
+                    Next
+                </button>
+            </header>
+
+            <div class="profile-box">
+                <div class="avatar-box">
+
+                    <label for="profile-pic">
+                        <img src="../img/profile_pic.png" alt="profile-picture">
+                    </label>
+                    
+                    <input type="file" name="profile-pic" id="profile-pic" class="pic-input">
+                </div>
+
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" class="profile-input">
+
+                <div class="bio-content">
+                    <label for="bio">Bio</label>
+            
+                    <input type="text" name="bio" id="bio" class="profile-input" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry.">
+                </div>
+
+                <div class="carSpe-box">
+                    <figure>
+                        <img src="../img/muvMax-icon.png" alt="muvMax-icon">
+                    </figure>
+
+                    <div class="carTxt-contanier">
+                        <h1>HB20 - Azul</h1>
+                        <p>BRA2019</p>
+                    </div>
+                </div>
+
+                <div class="input-box email-box">
+                    <label for="email">E-mail</label>
+
+                    <input type="email" name="email" id="email" class="profile-input" value="adreesExemple@gmail.com">
+                </div>       
+                
+                <div class="input-box phone-box">
+
+                    <label for="phone">Phone</label>
+
+                    <input type="tel" name="celular" id="phone" class="profile-input" value="55+ (13) 6545-4418">
+                </div>
+
+                <div class="input-box birth-box">
+                    
+                    <label for="birth">Birth</label>
+
+                    <input type="date" name="nascimento" id="birth" class="profile-input" value="11/08/2002">
+                </div>
+
+                <div class="input-box password-box">
+                    <label for="password">Password</label>
+
+                    <input type="password" name="password" id="password" class="profile-input" value="12345678">
+                </div>
+
+                <div class="payment-box">
+
+                    <h1>Payment</h1>
+
+                    <div class="input-box card-content"> 
+                        <figure>
+                            <img src="../img/card-icon.png" alt="card-icon">
+                        </figure>
+
+                        <input type="text" value="12345678" class="profile-input payment-input">
+                    </div>
+
+                    <div class="input-box pix-content">
+                        <figure>
+                            <img src="../img/pix-icon.png" alt="">
+                        </figure>
+
+                        <input type="text" value="12345678" class="profile-input payment-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

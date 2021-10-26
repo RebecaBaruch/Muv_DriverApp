@@ -485,3 +485,62 @@ footer{
 .inst-2{
     display: none;
 }
+
+/* formatação edit_profile.html */
+
+.profile_body{
+    background-color: #0033E8;
+}
+
+.profile-container{
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-container > header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.8rem;
+    width: 80%;
+}
+
+.back-btn, .next-btn{
+    outline: none;
+    border: none;
+    
+}
+
+.profile-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 80%;
+    width: 100%;
+
+    background-color: white;
+}
+
+.pic-input{
+    display: none;
+}
+
+.profile-input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
