@@ -561,7 +561,25 @@ footer{
     background-color: tomato;
 }
 
+.carSpe-box{
+    padding: 1rem;
+    width: 60% !important;
+    border-radius: 15px;
+    background-color: #0033E8;
+    color: white;
+}
 
+.carSpe-box > figure{
+    margin-left: 1rem;
+}
+
+.carTxt-contanier{
+    margin-right: 1rem;
+}
+
+.carTxt-contanier > h1, p{
+    font-size: 0.8rem;
+}
 
 .profile-input{
     outline: none;
@@ -574,4 +592,8 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     width: 68%;
+}
+
+.phone-box > input{
+    width: 50%;
 }
