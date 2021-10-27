@@ -179,7 +179,7 @@
     color: #0033E8
 }
 
-.input-box{
+.login-box{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
