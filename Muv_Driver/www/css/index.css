@@ -353,6 +353,11 @@ footer{
     width: 95%;
 }
 
+.doc-box{
+    font-family: 'Roboto', sans-serif;
+
+}
+
 .txtDoc-box{
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -640,4 +645,53 @@ footer{
 .pix-content > input{
     width: 82%;
     border-bottom: 1px solid #9e9e9e
+}
+
+/* formatação init-screen.html */
+
+.init-body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.init-body > .container{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.init-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.init-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.start-menu, .txtStatus-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.status-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.txtStatus-box{
+    width: 70%;
 }
