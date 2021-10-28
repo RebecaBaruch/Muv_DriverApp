@@ -237,6 +237,7 @@
 
 .cadastro-form > h1{
     margin-bottom: 3rem;
+    font-family: 'Roboto', sans-serif;
     color: #0033E8;
 }
 
@@ -648,7 +649,7 @@ footer{
     border-bottom: 1px solid #9e9e9e
 }
 
-/* formatação init-screen.html */
+/* formatação init-screen.html*/
 
 .init-body{
     overflow: hidden;
@@ -719,8 +720,14 @@ footer{
     margin-right: 0.4rem;
 }
 
-.status-box{
+.offline-box{
     background-color: #FBB605;
+}
+
+/* alert de status online */
+.online-box{
+    display: none;
+    background-color: #05FBB1;
 }
 
 .status-container{
@@ -738,6 +745,10 @@ footer{
     font-family: 'Roboto', sans-serif;
 }
 
+.txtStatus{
+    margin-left: 1rem;
+}
+
 .txtStatus > h1{
     font-size: 0.9rem;
     font-weight: bold;
@@ -747,8 +758,10 @@ footer{
     font-family: 'Open Sans', sans-serif;
 }
 
+
+/* container de preview de perfil do usuário */
 .profile-preview{
-    display: flex;
+    display: none; /* mudar para flex */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -812,3 +825,4 @@ footer{
     font-weight: 700;
     color: #AABDFF;
 }
+

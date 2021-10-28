@@ -21,7 +21,7 @@
                     </button>
 
                     <div class="status-container">
-                        <p> Offline </p>
+                        <p id="status-header"> Offline </p>
 
                         <input type="checkbox" name="status-check" id="status-btn">
                     </div>
@@ -41,15 +41,30 @@
                     </div>
                 </div>
                 
-                <div class="status-box">
-                    <div class="txtStatus-box">
-                        <img src="../img/moon_icon.png" alt="">
+                <div class="statusAlert-container">
 
-                        <div class="txtStatus">
-                            <h1>You are offline!</h1>
-                            <p>Go online for accepting jobs!</p>
+                    <div class="status-box offline-box">
+                        <div class="txtStatus-box">
+                            <img src="../img/moon_icon.png" alt="moon-icon" class="status-icon">
+    
+                            <div class="txtStatus">
+                                <h1 id="status-title">Você está offline!</h1>
+                                <p id="status-subTitle">Fique online para aceitar corridas!</p>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="status-box online-box">
+                        <div class="txtStatus-box">
+                            <img src="../img/sun_icon.png" alt="moon-icon" class="status-icon">
+    
+                            <div class="txtStatus">
+                                <h1 id="status-title">Você está online!</h1>
+                                <p id="status-subTitle">Aceite novas corridas!</p>
+                            </div>
+                        </div>
+                    </div>
+                        
                 </div>
             </header>
 
@@ -101,6 +116,10 @@
                         <p class="atrLevel-sub"> TOTAL JOBS</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="raceRequest-container">
+
             </div>
         </div>
 </body>
