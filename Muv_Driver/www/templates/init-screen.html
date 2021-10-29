@@ -129,6 +129,20 @@
 
                     <div class="txtClient-box">
                         <h1> Nome do Cliente </h1>
+                        <div class="speRace-box">
+                            <div class="paySpe-box">
+                                <p> Pix </p>
+                            </div>
+
+                            <div class="defSpe-box">
+
+                                <figure>
+                                    <img src="../img/hand-icon.png" alt="hand-icon">
+                                </figure>
+                                    
+                                <p> Deaf </p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="cashTxt-box">
@@ -138,16 +152,18 @@
 
                 <div class="race-container">
                     <div class="dot-container">
-
+                        <img src="../img/dot-gp.png" alt="dot-image">
                     </div>
 
                     <div class="localRequest-container">
                         <div class="local-box pickUp-box">
-
+                            <h2 class="localType-title">Pick Up</h2>
+                            <p class="local-txt"> R. Location Example</p>
                         </div>
 
                         <div class="local-box dropOff-box">
-
+                            <h2 class="localType-title">Drop Off</h2>
+                            <p class="local-txt">R. Destiny Example</p>
                         </div>
                     </div>
                 </div>
@@ -161,14 +177,5 @@
             </div>
         </div>
 
-
-        <script>
-            const statusBtn = document.querySelector("#status-Btn");
-            const offlineBox = document.querySelector(".offline-box");
-
-            statusBtn.addEventListener("click", function(){
-                offlineBox.style.display = "none";
-            })
-        </script>
 </body>
 </html>
