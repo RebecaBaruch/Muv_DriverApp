@@ -730,13 +730,6 @@ footer{
     background-color: #05FBB1;
 }
 
-.status-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .txtStatus-box{
     margin-left: 1rem;
     padding: 1rem;

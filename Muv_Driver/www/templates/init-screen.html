@@ -24,6 +24,8 @@
                         <p id="status-header"> Offline </p>
 
                         <input type="checkbox" name="status-check" id="status-btn">
+
+                        
                     </div>
 
                     <div class="news-container">
@@ -120,7 +122,53 @@
 
             <div class="raceRequest-container">
 
+                <div class="profileRace-container">
+                    <figure>
+                        <img src="../img/proPic-user.png" alt="profile-picture-user">
+                    </figure>
+
+                    <div class="txtClient-box">
+                        <h1> Nome do Cliente </h1>
+                    </div>
+
+                    <div class="cashTxt-box">
+
+                    </div>
+                </div>
+
+                <div class="race-container">
+                    <div class="dot-container">
+
+                    </div>
+
+                    <div class="localRequest-container">
+                        <div class="local-box pickUp-box">
+
+                        </div>
+
+                        <div class="local-box dropOff-box">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div calss="requestBtn-container">
+                    <button class="btn ignore-btn"> Ignore </button>
+
+                    <button class="btn accept-btn"> Accept </button>
+                </div>
+                
             </div>
         </div>
+
+
+        <script>
+            const statusBtn = document.querySelector("#status-Btn");
+            const offlineBox = document.querySelector(".offline-box");
+
+            statusBtn.addEventListener("click", function(){
+                offlineBox.style.display = "none";
+            })
+        </script>
 </body>
 </html>

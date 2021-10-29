@@ -652,7 +652,6 @@ footer{
 /* formatação init-screen.html*/
 
 .init-body{
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
 
@@ -660,6 +659,8 @@ footer{
 }
 
 .init-container{
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -688,11 +689,56 @@ footer{
     background-color: white;
 }
 
+.status-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .status-container > p{
     margin-right: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+}
+
+#status-btn{
+    position:relative;
+    width: 35px;
+    height: 18px;
+    border: 2px solid #121212;
+    border-radius: 60px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    outline: none;
+    transition: all 0.5 ease-in-out;
+    cursor: pointer;
+}
+
+#status-btn::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 17px;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: #121212;
+    transform:scale(0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+#status-btn:checked {
+    border: none;
+    background-color: #1bcf8d;
+}
+
+#status-btn:checked::before{
+    left: 18px;
+    background-color: white;
 }
 
 .btn-menu{
@@ -728,13 +774,6 @@ footer{
 .online-box{
     display: none;
     background-color: #05FBB1;
-}
-
-.status-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .txtStatus-box{
