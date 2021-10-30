@@ -767,12 +767,14 @@ footer{
 }
 
 .offline-box{
+    transition: all 2s ease;
     background-color: #FBB605;
 }
 
 /* alert de status online */
 .online-box{
     display: none;
+    transition: all 2s ease;
     background-color: #05FBB1;
 }
 
@@ -800,7 +802,7 @@ footer{
 
 /* container de preview de perfil do usuário */
 .profile-preview{
-    display: none; /* mudar para flex */
+    display: flex; /* mudar para flex */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -808,6 +810,8 @@ footer{
     width: 100%;
     border-radius: 30px 30px 0 0;
     background-color: white;
+
+    transition: all 2s ease
 }
 
 .proPreview-container{
@@ -868,11 +872,14 @@ footer{
 /* formata o request-container de corrida  com perfil do cliente*/
 
 .raceRequest-container{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-radius: 15px;
+    margin-bottom: 2vh;
+    padding: 1.5rem 2rem;
+    width: 70%;
+    border-radius: 20px;
 
     background-color: white;
 }
@@ -881,21 +888,31 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
-.profileRace-container > figure, 
-.profileRace-container > figure > image{
-    width: 35px;
-    height: 35px;
+.profileRace-container > figure{
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+}
+
+.profileRace-container > figure > img{
+    width: 40px;
+    height: 40px;
 }
 
 .txtClient-box{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     width: 50%;
+}
+.txtClient-box > .clientName{
+    margin-bottom: 4px;
 }
 
 .txtClient-box > .speRace-box{
@@ -907,5 +924,111 @@ footer{
 
 .speRace-box{
     display: flex;
-    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.defSpe-box > figure > img{
+    width: 0.5rem;
+    margin-right: 5px;
+}
+
+.paySpe-box, .defSpe-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.7rem;
+    border-radius: 10px;
+}
+
+.paySpe-box > p, .defSpe-box > p{
+    font-size: 0.7rem;
+}
+
+.paySpe-box{
+    margin-right: 5px;
+    background-color: #0032E2;
+    color: white;
+}
+
+.defSpe-box{
+    background-color: #22FFAF;
+    color: #121212;
+}
+
+.race-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.dot-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+    height: 60%;
+}
+
+.trace-div{
+    width: 1px;
+    height: 50%;
+    border: none;
+    border-left: 1px dotted #929292;
+}
+
+.dot{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+}
+
+.black-dot{
+    background-color: #121212;
+}
+
+.green-dot{
+background-color: #22FFAF;
+}
+
+.localType-title{
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.55rem;
+}
+
+.local-txt{
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.requestBtn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+}
+
+.requestBtn-container > button{
+    font-size: 0.7rem;
+    padding: 0.8rem;
+}
+
+.ignore-btn{
+    margin-right: 10px;
+    background-color: transparent;
+    color: #898989;
+}
+
+.accept-btn{
+    background-color: #1945e4;
+    color: white;
 }
