@@ -1032,3 +1032,40 @@ background-color: #22FFAF;
     background-color: #1945e4;
     color: white;
 }
+
+/* formata race-specification.html*/
+
+.proRace-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.proRace-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    height: 90%;
+
+    background-color: tomato;
+}
+
+.proRace-container > header{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+}
+
+.note-container > h1{
+    margin-bottom: 5px;
+    color: #525252;
+}
+
+.note-container > p{
+    font-family: 'Open Sans', sans-serif !important;
+}
