@@ -123,36 +123,43 @@
             <div class="raceRequest-container">
 
                 <div class="profileRace-container">
-                    <figure>
+                    <figure class="picClient-box">
                         <img src="../img/proPic-user.png" alt="profile-picture-user">
                     </figure>
 
                     <div class="txtClient-box">
-                        <h1> Nome do Cliente </h1>
+                        <h1 class="clientName p-title"> Nome do Cliente </h1>
+
                         <div class="speRace-box">
                             <div class="paySpe-box">
-                                <p> Pix </p>
+                                <p class="p-txt"> Pix </p>
                             </div>
 
                             <div class="defSpe-box">
 
-                                <figure>
+                                <figure class="def-icon">
                                     <img src="../img/hand-icon.png" alt="hand-icon">
                                 </figure>
                                     
-                                <p> Deaf </p>
+                                <p class="p-txt"> Surdo </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="cashTxt-box">
+                        <h1 class="cash  p-title"> R$15,00 </h1>
 
+                        <p class="distance p-txt"> 10KM </p>
                     </div>
                 </div>
 
                 <div class="race-container">
                     <div class="dot-container">
-                        <img src="../img/dot-gp.png" alt="dot-image">
+                        <div class="dot black-dot"></div>
+                        
+                        <div class="trace-div"></div>
+
+                        <div class="dot green-dot"></div>
                     </div>
 
                     <div class="localRequest-container">
@@ -168,7 +175,7 @@
                     </div>
                 </div>
 
-                <div calss="requestBtn-container">
+                <div class="requestBtn-container">
                     <button class="btn ignore-btn"> Ignore </button>
 
                     <button class="btn accept-btn"> Accept </button>
@@ -177,5 +184,36 @@
             </div>
         </div>
 
+
+        <script>
+            const statusBtn = document.querySelector("#status-btn");
+
+            const offBox = document.querySelector(".offline-box");
+            const onBox = document.querySelector(".online-box");
+            const statusTxt = document.querySelector("#status-header");
+
+            const raceRequest = document.querySelector(".raceRequest-container");
+            const proPreview = document.querySelector(".profile-preview");
+
+            statusBtn.addEventListener("click", function(){
+                if(statusBtn.checked){
+                    offBox.style.display = "none";
+                    onBox.style.display = "flex";
+
+                    statusTxt.innerHTML = "Online";
+                    proPreview.style.display = "none";
+                    raceRequest.style.display = "flex";
+                }
+                else {
+                    onBox.style.display = "none";
+                    offBox.style.display = "flex";
+
+                    statusTxt.innerHTML = "Offline";
+                    proPreview.style.display = "flex";
+                    raceRequest.style.display = "none";
+                }
+            })
+
+        </script>
 </body>
 </html>

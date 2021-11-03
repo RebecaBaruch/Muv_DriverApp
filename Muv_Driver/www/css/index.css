@@ -1048,10 +1048,8 @@ background-color: #22FFAF;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem;
+    margin: 2.5rem;
     height: 90%;
-
-    background-color: tomato;
 }
 
 .proRace-container > header{
@@ -1061,6 +1059,10 @@ background-color: #22FFAF;
     width: 100%;
 }
 
+.proRace-Spe{
+    margin-bottom: 0.5rem;
+}
+
 .note-container > h1{
     margin-bottom: 5px;
     color: #525252;
@@ -1068,4 +1070,113 @@ background-color: #22FFAF;
 
 .note-container > p{
     font-family: 'Open Sans', sans-serif !important;
+}
+
+.defSpe-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.def-RaceSpe{
+    width: 20%;
+    height: 50%;
+}
+
+.def-RaceSpe > figure > img {
+    width: 0.8rem;
+}
+
+.def-RaceSpe > P{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.serviceTip-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+.serviceTip-btn > p{
+    margin-right: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #525252;
+    text-align: left;
+}
+
+.tarifa-container{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.tarifa-container > h1{
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #525252;
+}
+
+.tarifa-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarifa-row > h1, p{
+    font-size: 0.8rem;
+}
+
+.outputs-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.output-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output-item > p{
+    font-size: 0.8rem;
+    color: #063DFF;
+}
+
+.raceBtn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.raceBtn-container > button{
+    width: 100%;
+    border-radius: 0;
+}
+
+.pickUp-btn{
+    margin-bottom: 1rem;
+    background-color: #1945e4;
+    color: white;
+}
+
+.cancel-btn{
+    border: 2px solid #1945e4;
+    background-color: transparent;
+    color: #1945e4;
 }
