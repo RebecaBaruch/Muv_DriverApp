@@ -659,8 +659,6 @@ footer{
 .init-body{
     width: 100vw;
     height: 100vh;
-
-    background-color: #121212;
 }
 
 .init-container{
@@ -1197,7 +1195,7 @@ background-color: #22FFAF;
     height: 100vh;
 }
 
-.popUpRace{
+.popUpRace-container{
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1205,7 +1203,6 @@ background-color: #22FFAF;
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #121212;
 }
 
 .race-container > header{
@@ -1282,7 +1279,7 @@ background-color: #22FFAF;
     font-size: 0.7rem;
 }
 
-/* formata o container de star corrida */
+/* formata o container de start corrida */
 
 .startRace-container{
     display: none;
