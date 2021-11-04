@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../cordova.js"></script>
     <title>Start</title>
 </head>
 <body class="init-body">
@@ -69,15 +71,15 @@
                         
                 </div>
             </header>
-
+            <div id="map"></div>
             <div class="profile-preview">
                 <div class="proPreview-container">
                     <figure class="preview-pic">
-                        <img src="../img/profile_pic.png" alt="profile-picture">
+                        <img src="../img/profile_pic.png" alt="profile-picture" id="driverImg">
                     </figure>
 
                     <div class="proPreview-txt">
-                        <h1 class="name p-title">Mr. Driver Irraaaa</h1>
+                        <h1 class="name p-title" id="driverName">Mr. Driver Irraaaa</h1>
                         <p class="driver-level p-txt"> Basic level </p>
                     </div>
 
@@ -119,9 +121,7 @@
                     </div>
                 </div>
             </div>
-
             <div class="raceRequest-container">
-
                 <div class="profileRace-container">
                     <figure class="picClient-box">
                         <img src="../img/proPic-user.png" alt="profile-picture-user">
@@ -179,13 +179,22 @@
                     <button class="btn ignore-btn"> Ignore </button>
 
                     <button class="btn accept-btn"> Accept </button>
-                </div>
-                
+                </div>                
             </div>
+            
         </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnuQpgsqSITzefoNMys4iXmfgWlXqEfk&callback=initMap&v=weekly"
+        async>
+    </script>
+    <script>
+        $(document).ready(function (){
+            $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/sessao.php', function (result) {
+                $('#driverName').text(result.nome)
+                $('#driverImg').attr('src', `../driverimg/${result.imgperfil}`)                
+        })            
+    }) 
 
-
-        <script>
             const statusBtn = document.querySelector("#status-btn");
 
             const offBox = document.querySelector(".offline-box");
@@ -214,6 +223,25 @@
                 }
             })
 
-        </script>
+            const showRace = setInterval(() => {
+                if(statusBtn.checked){
+                    $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/corrida.php', function (result) {
+                        console.log(result)
+
+                        const initcontainer = document.querySelector('.init-container')
+
+                        let divRace = '<option>'
+                        
+
+                        initcontainer.appendChild()
+
+
+                        clearInterval(showRace)                
+                    })                
+                } else {
+                    console.log('offline')                 
+                }
+        }, 1000);
+    </script>
 </body>
 </html>

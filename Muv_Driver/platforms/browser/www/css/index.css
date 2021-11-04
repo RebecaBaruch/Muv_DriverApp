@@ -1053,8 +1053,10 @@ background-color: #22FFAF;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 2.5rem;
+    margin: 2rem;
     height: 90%;
+
+    background-color: tomato;
 }
 
 .proRace-container > header{
@@ -1064,10 +1066,6 @@ background-color: #22FFAF;
     width: 100%;
 }
 
-.proRace-Spe{
-    margin-bottom: 0.5rem;
-}
-
 .note-container > h1{
     margin-bottom: 5px;
     color: #525252;
@@ -1075,176 +1073,4 @@ background-color: #22FFAF;
 
 .note-container > p{
     font-family: 'Open Sans', sans-serif !important;
-}
-
-.defSpe-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    width: 100%;
-}
-
-.def-RaceSpe{
-    width: 20%;
-    height: 50%;
-}
-
-.def-RaceSpe > figure > img {
-    width: 0.8rem;
-}
-
-.def-RaceSpe > P{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.serviceTip-btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-}
-
-.serviceTip-btn > p{
-    margin-right: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #525252;
-    text-align: left;
-}
-
-.tarifa-container{
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-
-.tarifa-container > h1{
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #525252;
-}
-
-.tarifa-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.tarifa-row > h1, p{
-    font-size: 0.8rem;
-}
-
-.outputs-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    width: 100%;
-}
-
-.output-item{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.output-item > p{
-    font-size: 0.8rem;
-    color: #063DFF;
-}
-
-.raceBtn-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.raceBtn-container > button{
-    width: 100%;
-    border-radius: 0;
-}
-
-.pickUp-btn{
-    margin-bottom: 1rem;
-    background-color: #1945e4;
-    color: white;
-}
-
-.cancel-btn{
-    border: 2px solid #1945e4;
-    background-color: transparent;
-    color: #1945e4;
-}
-
-/* formatação da race.html */
-
-.race-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-.race-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #121212;
-}
-
-.race-container > header{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem 0;
-    width: 100%;
-    background-color: white;
-}
-
-.racePage-header > button{
-    position: absolute;
-    left: 2rem;
-}
-
-.racePage-header > h1{
-    font-size: 1.2rem;
-}
-
-.pickUp-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    width: 70%;
-
-    border-radius: 20px;
-    background-color: white;
-}
-
-.localTxt-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #4B4B4B;
-}
-
-.proClient-pickUp{
-    
 }
