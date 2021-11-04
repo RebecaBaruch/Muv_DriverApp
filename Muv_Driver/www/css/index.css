@@ -1180,3 +1180,66 @@ background-color: #22FFAF;
     background-color: transparent;
     color: #1945e4;
 }
+
+/* formatação da race.html */
+
+.race-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.race-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+}
+
+.race-container > header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 0;
+    width: 100%;
+    background-color: white;
+}
+
+.racePage-header > button{
+    position: absolute;
+    left: 2rem;
+}
+
+.racePage-header > h1{
+    font-size: 1.2rem;
+}
+
+.pickUp-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 70%;
+
+    border-radius: 20px;
+    background-color: white;
+}
+
+.localTxt-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #4B4B4B;
+}
+
+.proClient-pickUp{
+    
+}
