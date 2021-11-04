@@ -38,7 +38,7 @@
                     <label class="txtlabel" for="bio">Bio</label>
                     <br>
             
-                    <input type="text" name="bio" id="bio" class="bio-input profile-input" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry.">
+                    <input type="text" name="bio" id="bio" class="bio-input profile-input" value="Fale um pouco sobre você!" disabled>
                 </div>
 
                 <div class="input-box carSpe-box">
@@ -75,7 +75,7 @@
                 <div class="input-box password-box">
                     <label for="password">Password</label>
 
-                    <input type="password" name="password" id="password" class="profile-input" value="12345678">
+                    <input type="password" name="password" id="password" class="profile-input" value="12345678" disabled>
                 </div>
 
                 <div class="payment-box">
@@ -87,7 +87,7 @@
                             <img src="../img/card-icon.png" alt="card-icon">
                         </figure>
 
-                        <input type="text" value="12345678" class="profile-input payment-input">
+                        <input type="text" value="" class="profile-input payment-input" disabled>
                     </div>
 
                     <div class="input-box pix-content">
@@ -95,7 +95,7 @@
                             <img src="../img/pix-icon.png" alt="">
                         </figure>
 
-                        <input type="text" value="12345678" class="profile-input payment-input">
+                        <input type="text" value="" class="profile-input payment-input" disabled>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,26 @@
     })
 })
 
-    $('.next-btn').click(function (){
+    $('.next-btn').click(function (){ 
+        var file_data = $('#profile-pic').prop('files')[0];
+        var form_data = new FormData();
+
+        if (file_data != undefined) {
+            form_data.append('file', file_data);
+            $.ajax({
+                url: "http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/alterarImagem.php",
+                type: "POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                    $('.userImg').attr('src', `userimg/${data}`)
+                }
+            });
+        }
+        
         let email = $('#email').val()
         let nome = $('#nome').val()
         let senha = $('#password').val()
@@ -131,7 +150,7 @@
                 console.log(data)
                 if ($.trim(data) == "success") {                    
                     console.log('dados alterados com sucesso!')
-                    location.reload()
+                    location.href = 'init-screen.html'
                 } else {
                     console.log('erro ao alterar ;-;')                    
                 }

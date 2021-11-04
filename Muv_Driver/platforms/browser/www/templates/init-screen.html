@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../cordova.js"></script>
     <title>Start</title>
 </head>
 <body class="init-body">
@@ -69,15 +71,15 @@
                         
                 </div>
             </header>
-
+            <div id="map"></div>
             <div class="profile-preview">
                 <div class="proPreview-container">
                     <figure class="preview-pic">
-                        <img src="../img/profile_pic.png" alt="profile-picture">
+                        <img src="../img/profile_pic.png" alt="profile-picture" id="driverImg">
                     </figure>
 
                     <div class="proPreview-txt">
-                        <h1 class="name p-title">Mr. Driver Irraaaa</h1>
+                        <h1 class="name p-title" id="driverName">Mr. Driver Irraaaa</h1>
                         <p class="driver-level p-txt"> Basic level </p>
                     </div>
 
@@ -119,9 +121,7 @@
                     </div>
                 </div>
             </div>
-
             <div class="raceRequest-container">
-
                 <div class="profileRace-container">
                     <figure class="picClient-box">
                         <img src="../img/proPic-user.png" alt="profile-picture-user">
@@ -179,11 +179,122 @@
                     <button class="btn ignore-btn"> Ignore </button>
 
                     <button class="btn accept-btn"> Accept </button>
-                </div>
-                
+                </div>                
             </div>
+            
         </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnuQpgsqSITzefoNMys4iXmfgWlXqEfk&callback=initMap&v=weekly"
+        async>
+    </script>
+    <script>
+        $(document).ready(function (){
+            $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/sessao.php', function (result) {
+                $('#driverName').text(result.nome)
+                $('#driverImg').attr('src', `../driverimg/${result.imgperfil}`)                
+        })            
+    }) 
 
+            const statusBtn = document.querySelector("#status-btn");
+
+            const offBox = document.querySelector(".offline-box");
+            const onBox = document.querySelector(".online-box");
+            const statusTxt = document.querySelector("#status-header");
+
+            const raceRequest = document.querySelector(".raceRequest-container");
+            const proPreview = document.querySelector(".profile-preview");
+
+            statusBtn.addEventListener("click", function(){
+                if(statusBtn.checked){
+                    offBox.style.display = "none";
+                    onBox.style.display = "flex";
+
+                    statusTxt.innerHTML = "Online";
+                    proPreview.style.display = "none";
+                    raceRequest.style.display = "flex";
+                }
+                else {
+                    onBox.style.display = "none";
+                    offBox.style.display = "flex";
+
+                    statusTxt.innerHTML = "Offline";
+                    proPreview.style.display = "flex";
+                    raceRequest.style.display = "none";
+                }
+            })
+
+            const showRace = setInterval(() => {
+                if(statusBtn.checked){
+                    $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/corrida.php', function (result) {
+                        console.log(result)
+
+                        const initcontainer = document.querySelector('.init-container')
+
+                        initcontainer.appendChild(
+                            <div class="raceRequest-container">
+                <div class="profileRace-container">
+                    <figure class="picClient-box">
+                        <img src="../img/proPic-user.png" alt="profile-picture-user">
+                    </figure>
+
+                    <div class="txtClient-box">
+                        <h1 class="clientName p-title"> Nome do Cliente </h1>
+
+                        <div class="speRace-box">
+                            <div class="paySpe-box">
+                                <p class="p-txt"> Pix </p>
+                            </div>
+
+                            <div class="defSpe-box">
+
+                                <figure class="def-icon">
+                                    <img src="../img/hand-icon.png" alt="hand-icon">
+                                </figure>
+                                    
+                                <p class="p-txt"> Surdo </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cashTxt-box">
+                        <h1 class="cash  p-title"> R$15,00 </h1>
+
+                        <p class="distance p-txt"> 10KM </p>
+                    </div>
+                </div>
+
+                <div class="race-container">
+                    <div class="dot-container">
+                        <div class="dot black-dot"></div>
+                        
+                        <div class="trace-div"></div>
+
+                        <div class="dot green-dot"></div>
+                    </div>
+
+                    <div class="localRequest-container">
+                        <div class="local-box pickUp-box">
+                            <h2 class="localType-title">Pick Up</h2>
+                            <p class="local-txt"> R. Location Example</p>
+                        </div>
+
+                        <div class="local-box dropOff-box">
+                            <h2 class="localType-title">Drop Off</h2>
+                            <p class="local-txt">R. Destiny Example</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="requestBtn-container">
+                    <button class="btn ignore-btn"> Ignore </button>
+
+                    <button class="btn accept-btn"> Accept </button>
+                </div>                
+            </div>
+                        )
+
+
+<<<<<<< Updated upstream
 
         <script>
             const statusBtn = document.querySelector("#status-btn");
@@ -215,5 +326,14 @@
             })
 
         </script>
+=======
+                        clearInterval(showRace)                
+                    })                
+                } else {
+                    console.log('offline')                 
+                }
+        }, 1000);
+    </script>
+>>>>>>> Stashed changes
 </body>
 </html>
