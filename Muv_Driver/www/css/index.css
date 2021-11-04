@@ -1197,7 +1197,7 @@ background-color: #22FFAF;
     height: 100vh;
 }
 
-.race-container{
+.popUpRace{
     overflow: hidden;
     display: flex;
     flex-direction: column;
