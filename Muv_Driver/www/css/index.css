@@ -1193,6 +1193,7 @@ background-color: #22FFAF;
 }
 
 .race-container{
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1207,7 +1208,7 @@ background-color: #22FFAF;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem 0;
+    padding: 1rem 0;
     width: 100%;
     background-color: white;
 }
@@ -1222,12 +1223,12 @@ background-color: #22FFAF;
 }
 
 .pickUp-container{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    width: 70%;
+    padding: 2rem;
+    margin-bottom: 7vh;
+    width: 65%;
 
     border-radius: 20px;
     background-color: white;
@@ -1237,9 +1238,79 @@ background-color: #22FFAF;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    width: 100%;
     color: #4B4B4B;
 }
 
+.local-title{
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
 .proClient-pickUp{
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proTxt-pickUp{
+    width: 65%;
+}
+
+.proTxt-pickUp > h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
+.defSpe-pickUp{
+    width: 2.5rem;
+}
+
+.defSpe-pickUp > figure > img{
+    width: 0.7rem;
+}
+
+.defSpe-pickUp > p{
+    font-size: 0.7rem;
+}
+
+/* formata o container de star corrida */
+
+.startRace-container{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+}
+
+.startRace-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3rem;
+}
+
+.destiny-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.proStart-nome{
+    width: 50%;
+}
+
+.start-btn{
+    margin-top: 2rem;
+    border-radius: 0;
+}
+
+/* formata route container */
+
+.route-container{
+    background-color: white;
 }
