@@ -56,6 +56,7 @@
             success: function (data) {
                 if ($.trim(data) == "success") {
                     console.log('cadastrado com sucesso!')
+                    location.href = 'edit_profile.html'
                 } else {
                     console.log('erro ao cadastrar :(')                    
                 }

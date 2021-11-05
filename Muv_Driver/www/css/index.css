@@ -659,6 +659,11 @@ footer{
 .init-body{
     width: 100vw;
     height: 100vh;
+<<<<<<< Updated upstream
+=======
+
+    /* background-color: #121212; */
+>>>>>>> Stashed changes
 }
 
 .init-container{
@@ -677,6 +682,7 @@ footer{
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    z-index: 1;
 }
 
 .start-menu, .txtStatus-box{
@@ -813,7 +819,7 @@ footer{
     width: 100%;
     border-radius: 30px 30px 0 0;
     background-color: white;
-
+    z-index: 1;
     transition: all 2s ease
 }
 
@@ -883,6 +889,11 @@ footer{
     padding: 1.5rem 2rem;
     width: 70%;
     border-radius: 20px;
+<<<<<<< Updated upstream
+=======
+    z-index: 1;
+    background-color: white;
+>>>>>>> Stashed changes
 }
 
 .profileRace-container{

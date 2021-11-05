@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <title>Race profile</title>
 </head>
 <body class="proRace-body">
@@ -132,5 +132,12 @@
             <button class="btn cancel-btn p-title"> CANCELAR </button>
         </div>
     </div>
+    <script>
+        $(document).ready(function (){
+            $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/dadoscorrida.php', function (result) {
+                console.log(result)                
+        })
+    }) 
+    </script>
 </body>
 </html>

@@ -121,6 +121,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< Updated upstream
             
             <div class="raceRequest-container">
                 <div class="profileRace-container">
@@ -183,6 +184,9 @@
                 </div>                
             </div>
             
+=======
+            <div class="raceRequest-container"></div>
+>>>>>>> Stashed changes
         </div>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnuQpgsqSITzefoNMys4iXmfgWlXqEfk&callback=initMap&v=weekly"
@@ -193,7 +197,7 @@
             $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/sessao.php', function (result) {
                 $('#driverName').text(result.nome)
                 $('#driverImg').attr('src', `../driverimg/${result.imgperfil}`)                
-        })            
+        })
     }) 
 
             const statusBtn = document.querySelector("#status-btn");
@@ -201,8 +205,6 @@
             const offBox = document.querySelector(".offline-box");
             const onBox = document.querySelector(".online-box");
             const statusTxt = document.querySelector("#status-header");
-
-            const raceRequest = document.querySelector(".raceRequest-container");
             const proPreview = document.querySelector(".profile-preview");
 
             statusBtn.addEventListener("click", function(){
@@ -211,8 +213,7 @@
                     onBox.style.display = "flex";
 
                     statusTxt.innerHTML = "Online";
-                    proPreview.style.display = "none";
-                    raceRequest.style.display = "flex";
+                    proPreview.style.display = "none";                    
                 }
                 else {
                     onBox.style.display = "none";
@@ -220,29 +221,35 @@
 
                     statusTxt.innerHTML = "Offline";
                     proPreview.style.display = "flex";
-                    raceRequest.style.display = "none";
+                    popUpRace.style.display = "none";
                 }
             })
 
-            const showRace = setInterval(() => {
+            const popUpRace = document.querySelector('.raceRequest-container')
+            
+            statusBtn.addEventListener('click', () =>{
                 if(statusBtn.checked){
-                    $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/corrida.php', function (result) {
-                        console.log(result)
-
-                        const initcontainer = document.querySelector('.init-container')
-
-                        let divRace = '<option>'
-                        
-
-                        initcontainer.appendChild()
-
-
+                const showRace = setInterval(() => {
+                    $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/popupcorrida.php', function (result) {
+                        popUpRace.innerHTML = result
+                        popUpRace.style.display = "flex";
+                        const acceptRace = document.querySelector('#btnAcceptRace')
+                        acceptRace.addEventListener('click', () =>{
+                            location.href = 'race-specification.html'
+                        })
                         clearInterval(showRace)                
-                    })                
+                    })
+                }, 1000);                                    
                 } else {
                     console.log('offline')                 
                 }
-        }, 1000);
+
+            })
+            
+            
+            
+
+
     </script>
 </body>
 </html>
