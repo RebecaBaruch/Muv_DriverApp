@@ -1094,8 +1094,7 @@ background-color: #22FFAF;
 }
 
 .def-RaceSpe{
-    width: 20%;
-    height: 50%;
+   padding: 5px;
 }
 
 .def-RaceSpe > figure > img {
@@ -1104,7 +1103,7 @@ background-color: #22FFAF;
 
 .def-RaceSpe > P{
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -1370,4 +1369,9 @@ background-color: #22FFAF;
     width: 80%;
     height: 90%;
     background-color: tomato;
+}
+
+.def-RaceSpe{
+    width: 70px;
+    font-size: 20px;
 }
