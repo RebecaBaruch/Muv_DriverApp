@@ -10,15 +10,16 @@
     <title>Pagamento</title>
 </head>
 <body class="fRace-body">
+
     <div class="fRace-container">
         <div class="finishPro-container">
-            <figure>
+            <figure class="finishPic-client">
                 <img src="../img/proPic-user.png" alt="client-profile-photo">
             </figure>
     
             <div class="finishPro-txt">
                 <h1 class="p-title">Nome do Cliente</h1>
-    
+
                 <div class="defSpe-box def-RaceSpe">
                     <figure>
                         <img src="../img/hand-icon.png" alt="hand-icon">
@@ -67,19 +68,19 @@
                 <p class="p-title">Distance: 14km</p>
             </div>
     
-            <div class="raceData-col">
+            <div class="raceData-col raceData-col2">
                 <p class="p-txt f-price"> preço final</p>
                 <p class="p-title fPrice-txt"> R$10,00</p>
             </div>
         </div>
     
         <div class="selectPay-container">
-            <h1 class="p-title">Selecione uma opção de pagamento</h1>
+            <h1 class="p-title">SELECIONE UMA OPÇÃO DE PAGAMENTO</h1>
             
             <div class="payOp-container">
                 <div class="payOp-row"> 
                     <label class="payOp-txt" for="card-op"> Cartão </label>
-                    <input type="checkbox" name="card-op" id="card-op">
+                    <input type="checkbox" name="card-op" id="card-op" class="checkbox-style">
                 </div>
     
                 <div class="payOp-row"> 
@@ -92,13 +93,13 @@
                         Pix
                     </label>
     
-                    <label class="subTxt-pix" for="pix"> gerar qr code </label>
+                    <label class="subTxt-pix" for="pix"> <a href=""> gerar qr code </a> </label>
                     <input type="checkbox" name="pix" id="pix">
                 </div>
             </div>
         </div>
     
-        <button class="btn finishRace-btn"> Finalizar </button>
+        <button class="btn finishRace-btn"> FINALIZAR CORRIDA </button>
     </div>
 </body>
 </html>

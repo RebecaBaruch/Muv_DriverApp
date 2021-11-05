@@ -1103,7 +1103,7 @@ background-color: #22FFAF;
 
 .def-RaceSpe > P{
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 0.7rem;
     font-weight: bold;
 }
 
@@ -1363,15 +1363,135 @@ background-color: #22FFAF;
 }
 
 .fRace-container{
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80%;
-    height: 90%;
-    background-color: tomato;
+    width: 75%;
+    height: 80%;
+}
+
+.finishPro-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.finishPic-client{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+}
+
+.finishPic-client > img{
+    width: 100%;
+}
+
+.finishPro-txt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.finishPro-txt > h1{
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #525252;
+    width: 100%;
 }
 
 .def-RaceSpe{
-    width: 70px;
+    padding: 5px;
     font-size: 20px;
+}
+
+.location-RaceSpe{
+    width: 100%;
+}
+
+.location-RaceSpe > .localRequest-container{
+    width: 100%;
+}
+
+.localTxt-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.raceData-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.raceData-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.raceData-col > .p-title{
+    font-size: 1rem;
+}
+
+.f-price{
+    text-align: right;
+}
+
+.fPrice-txt{
+    font-size: 2rem !important;
+}
+
+.selectPay-container > h1{
+    margin-bottom: 1rem;
+    color: #525252;
+}
+
+.payOp-container{
+    padding: 2rem;
+    border-radius: 20px;
+    
+    background-color: #131E2B;
+}
+
+.payOp-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0;
+}
+
+.payOp-txt{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.subTxt-pix > a{
+    font-family: 'Roboto', sans-serif;
+    color: #A1B2C5;
+}
+
+.checkbox-style{
+    border: 1px solid #426A95;
+    background-color: #131E2B;
+}
+
+#pix{
+    display: none;
+}
+
+.finishRace-btn{
+    padding: 1.5rem 0 !important;
+    background-color: #C4C4C4;
+    color: white;
+}
+
+.finishRace-btn.finishBtn-blue{
+    background-color: #063DFF;
 }
