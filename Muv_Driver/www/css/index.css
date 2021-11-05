@@ -883,8 +883,6 @@ footer{
     padding: 1.5rem 2rem;
     width: 70%;
     border-radius: 20px;
-
-    background-color: white;
 }
 
 .profileRace-container{
@@ -1193,6 +1191,8 @@ background-color: #22FFAF;
     align-items: center;
     width: 100vw;
     height: 100vh;
+
+    background-color: #121212;
 }
 
 .popUpRace-container{
@@ -1205,7 +1205,7 @@ background-color: #22FFAF;
     height: 100%;
 }
 
-.race-container > header{
+.popUpRace-container > header{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1314,5 +1314,49 @@ background-color: #22FFAF;
 /* formata route container */
 
 .route-container{
+    padding: 1.5rem;
+    margin-bottom: 8vh;
+    width: 70%;
+    border-radius: 20px;
     background-color: white;
+}
+
+.instructions-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dir-icon > img{
+    width: 0.8rem;
+}
+
+.instructions-row > p{
+    font-size: 0.8rem;
+}
+
+.instru-dir{
+    width: 55%;
+    font-weight: 700;
+}
+
+/* formatção da finish-race.html */
+
+.fRace-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.fRace-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 90%;
+    background-color: tomato;
 }
