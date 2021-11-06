@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,11 @@
     <title> Corrida</title>
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../cordova.js"></script>
 </head>
+
 <body class="race-body">
     <div class="popUpRace-container">
         <header class="racePage-header">
@@ -18,42 +22,46 @@
 
             <h1 class="p-title"> Pick Up</h1>
         </header>
+        <div id="map"></div>
+        <!-- pickup popup  -->
 
-        <div class="pickUp-container">
+        <div class="pickUp-container" style="display: flex;position: absolute;bottom: 2em;">
             <div class="local-row">
-                <div class="localTxt-row"> 
+                <div class="localTxt-row">
                     <p class="p-title">Pick up at</p>
-                    <p class="p-title">2KM</p>
+                    <p id="distanceFromClient" class="p-title">2KM</p>
                 </div>
 
-                <p class="p-title local-title">R. Local de Exemplo</p>
+                <p id="clientLocal" class="p-title local-title">R. Local de Exemplo</p>
             </div>
-                <div class="proClient-pickUp">
-                    <figure>
-                        <img src="../img/proPic-user.png" alt="client-photo">
-                    </figure>
+            <div class="proClient-pickUp">
+                <figure>
+                    <img src="../img/proPic-user.png" alt="client-photo">
+                </figure>
 
-                    <div class="proTxt-pickUp">
-                        <h1>Nome do Usuário</h1>
+                <div class="proTxt-pickUp">
+                    <h1 id="clientName">Nome do Usuário</h1>
 
-                        <div class="defSpe-box def-RaceSpe defSpe-pickUp">
-                            <figure>
-                                <img src="../img/hand-icon.png" alt="hand-icon">
-                            </figure>
-                    
-                            <p> Surdo</p>
-                        </div>
+                    <div class="defSpe-box def-RaceSpe defSpe-pickUp">
+                        <figure>
+                            <img src="../img/hand-icon.png" alt="hand-icon">
+                        </figure>
+
+                        <p id="clientEspec"> Surdo</p>
                     </div>
-
-                    <a href="#">
-                        <button class="news-btn">
-                            <img src="../img/chat.png" alt="chat-icon">
-                        </button>
-                    </a>
                 </div>
-            
+
+                <a href="#">
+                    <button class="news-btn">
+                        <img src="../img/chat.png" alt="chat-icon">
+                    </button>
+                </a>
+            </div>
+
         </div>
 
+
+        <!-- start race popup  -->
         <div class="startRace-container">
 
             <div class="startRace-content">
@@ -62,7 +70,7 @@
                         <p class="p-txt">Deixar em</p>
                         <p class="p-txt">10KM</p>
                     </div>
-                    
+
                     <div class="destiny-row">
                         <p class="p-title local-title">R. Destino de Exemplo</p>
 
@@ -81,7 +89,7 @@
                         <figure>
                             <img src="../img/hand-icon.png" alt="hand-icon">
                         </figure>
-                
+
                         <p> Surdo</p>
                     </div>
                 </div>
@@ -92,31 +100,83 @@
             </div>
         </div>
 
-        <div class="route-container">
+        <div class="route-container" style="display: none;">
             <div class="local-row">
                 <div class="localTxt-row">
                     <p class="p-txt">Deixar em</p>
                     <p class="p-txt">10KM</p>
                 </div>
-                
+
                 <div class="destiny-row">
                     <p class="p-title local-title">R. Destino de Exemplo</p>
                 </div>
             </div>
 
             <div class="instructions-row">
-                  <figure class="dir-icon">
-                      <img src="../img/turn-arrow.png" alt="turn-left-icon">
-                  </figure>
-                
-                <p class="p-title">
-                      <span>500</span>m
-                  </p>
+                <figure class="dir-icon">
+                    <img src="../img/turn-arrow.png" alt="turn-left-icon">
+                </figure>
 
-                  <p class="p-txt instru-dir"> R. Rua de Exemplo</p>
+                <p class="p-title">
+                    <span>500</span>m
+                </p>
+
+                <p class="p-txt instru-dir"> R. Rua de Exemplo</p>
             </div>
         </div>
-    
+
     </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnuQpgsqSITzefoNMys4iXmfgWlXqEfk&callback=pickUpMap&v=weekly"
+        async></script>
+    <script>
+        function pickUpMap() {
+
+            var lat = parseFloat(localStorage.getItem('latitu'));
+            var lon = parseFloat(localStorage.getItem('longitu'));
+
+            var driverLocal = { lat: lat, lng: lon };
+
+
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            const directionsService = new google.maps.DirectionsService();
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: driverLocal,
+                disableDefaultUI: true
+            });
+
+
+            $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/dadoscorrida.php', function (result) {
+                $('#clientName').text(result.nome)
+                $('#clientEspec').text(result.especificacao)
+                $('#clientLocal').text(result.endOrigem)
+
+                let clientlocal = result.endOrigem
+
+                directionsRenderer.setMap(map);
+                directionsService
+                    .route({
+                        origin: driverLocal,
+                        destination: clientlocal,
+                        travelMode: google.maps.TravelMode.DRIVING
+                        // Note that Javascript allows us to access the constant
+                        // using square brackets and a string value as its
+                        // "property."
+                    })
+                    .then((response) => {
+                        console.log(response)
+                        directionsRenderer.setDirections(response)
+                        $('#distanceFromClient').text(response.routes[0].legs[0].distance.text)
+                    })
+                    .catch((e) => window.alert("Directions request failed due to " + status));
+            })
+
+
+
+        }
+
+    </script>
 </body>
+
 </html>

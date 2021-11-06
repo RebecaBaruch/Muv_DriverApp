@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="cash-txt">
-                        <h1 class="cash p-title"> R$120,00</h1>
+                        <h1 class="cash p-title"> R$ 0</h1>
                         <p class="p-txt">Balance</p>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                             <img src="../img/clock_icon.png" alt="clock-icon">
                         </figure>
 
-                        <h1 class="atrLevel-title race-time"> 8.5 </h1>
+                        <h1 class="atrLevel-title race-time"> 0 </h1>
 
                         <p class="atrLevel-sub"> HOURS ONLINE</p>
                     </div>
@@ -105,7 +105,7 @@
                             <img src="../img/velo_icon.png" alt="velocímetro-icon">
                         </figure>
 
-                        <h1 class="atrLevel-title km-data"> 20 KM </h1>
+                        <h1 class="atrLevel-title km-data"> 0 KM </h1>
 
                         <p class="atrLevel-sub"> TOTAL DISTANCE</p>
                     </div>
@@ -115,7 +115,7 @@
                             <img src="../img/ticket_icon.png" alt="ticket-icon">
                         </figure>
 
-                        <h1 class="atrLevel-title total-races"> 10 </h1>
+                        <h1 class="atrLevel-title total-races"> 0 </h1>
 
                         <p class="atrLevel-sub"> TOTAL JOBS</p>
                     </div>
@@ -166,13 +166,19 @@
                 if(statusBtn.checked){
                 const showRace = setInterval(() => {
                     $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/popupcorrida.php', function (result) {
-                        popUpRace.innerHTML = result
-                        popUpRace.style.display = "flex";
-                        const acceptRace = document.querySelector('#btnAcceptRace')
-                        acceptRace.addEventListener('click', () =>{
-                            location.href = 'race-specification.html'
-                        })
-                        clearInterval(showRace)                
+                        if(result != 'norace'){
+                            popUpRace.innerHTML = result
+                            popUpRace.style.display = "flex";
+
+                            const acceptRace = document.querySelector('#btnAcceptRace')
+                            acceptRace.addEventListener('click', () =>{
+                                location.href = 'race-specification.html'
+                            })
+
+                            clearInterval(showRace)
+                        }else{
+                            console.log('sem corridas!')
+                        }                                        
                     })
                 }, 1000);                                    
                 } else {

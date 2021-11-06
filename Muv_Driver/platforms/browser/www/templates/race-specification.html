@@ -24,19 +24,19 @@
             </figure>
 
             <div class="txtClient-box">
-                <h1 class="clientName p-title"> Nome do Cliente </h1>
+                <h1 id="clientName" class="clientName p-title"> Nome do Cliente </h1>
 
                 <div class="speRace-box">
                     <div class="paySpe-box">
-                        <p class="p-txt"> Pix </p>
+                        <p id="paymentType" class="p-txt"> Pix </p>
                     </div>
                 </div>
             </div>
 
             <div class="cashTxt-box">
-                <h1 class="cash  p-title"> R$15,00 </h1>
+                <h1 id="txtPreco" class="cash  p-title"> R$15,00 </h1>
 
-                <p class="distance p-txt"> 10KM </p>
+                <p id="txtKm" class="distance p-txt"> 10KM </p>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                     <img src="../img/hand-icon.png" alt="hand-icon">
                 </figure>
 
-                <p> Surdo</p>
+                <p id="txtEspec"> Surdo</p>
             </div>
             <button class="btn serviceTip-btn"> 
                 <p> Dicas de atendimento </p>
@@ -73,12 +73,12 @@
             <div class="localRequest-container">
                 <div class="local-box pickUp-box">
                     <h2 class="localType-title">Pick Up</h2>
-                    <p class="local-txt"> R. Location Example</p>
+                    <p id="txtOrigem" class="local-txt"> R. Location Example</p>
                 </div>
 
                 <div class="local-box dropOff-box">
                     <h2 class="localType-title">Drop Off</h2>
-                    <p class="local-txt">R. Destiny Example</p>
+                    <p id="txtDestino" class="local-txt">R. Destiny Example</p>
                 </div>
             </div>
         </div>
@@ -128,16 +128,34 @@
         </div>
 
         <div class="raceBtn-container">
-            <button class="btn pickUp-btn p-title"> ACEITAR CORRIDA </button>
-            <button class="btn cancel-btn p-title"> CANCELAR </button>
+            <button id="btnAcceptRace" class="btn pickUp-btn p-title"> ACEITAR CORRIDA </button>
+            <button id="btnCancelRace" class="btn cancel-btn p-title"> CANCELAR </button>
         </div>
     </div>
     <script>
         $(document).ready(function (){
             $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/dadoscorrida.php', function (result) {
-                console.log(result)                
+                $('#clientName').text(result.nome)                
+                $('#paymentType').text(result.pagamento)                
+                $('#txtKm').text(result.distancia)                
+                $('#txtEspec').text(result.especificacao)                
+                $('#txtPreco').text(result.preco)                
+                $('#txtOrigem').text(result.endOrigem)                
+                $('#txtDestino').text(result.endDestino)                
         })
-    }) 
+    })
+    $('#btnAcceptRace').click(() => {
+        $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/confirmarCorrida.php",
+            success: function (data) {
+                console.log(data)
+            }
+        });
+    })
+    $('#btnCancelRace').click(() => {
+        location.href = 'init-screen.html'
+    })
     </script>
 </body>
 </html>

@@ -1,15 +1,20 @@
 <?php
 include 'conexao.php';
 
+session_start();
+
 $raceQuery = mysqli_query($con,'select * from corrida where status="motorista" order by idCorrida DESC');
 
-$resulRaceQuery = mysqli_fetch_assoc($raceQuery);
+if(mysqli_num_rows($raceQuery) != 0){
+    $resulRaceQuery = mysqli_fetch_assoc($raceQuery);
 
-$userInfoQuery = mysqli_query($con, "select * from usuario where codUser =" . $resulRaceQuery["infUser"]);
+    $userInfoQuery = mysqli_query($con, "select * from usuario where codUser =" . $resulRaceQuery["infUser"]);
 
-$resulUserInfoQuery = mysqli_fetch_assoc($userInfoQuery);
-    
-$popUp = '<div class="profileRace-container">
+    $resulUserInfoQuery = mysqli_fetch_assoc($userInfoQuery);
+        
+    $_SESSION['clientId'] = $resulRaceQuery["infUser"];
+
+    $popUp = '<div class="profileRace-container">
                     <figure class="picClient-box">
                         <img src="../img/proPic-user.png" alt="profile-picture-user">
                     </figure>
@@ -54,8 +59,14 @@ $popUp = '<div class="profileRace-container">
                     <button class="btn ignore-btn"> Ignore </button>
                     <button id="btnAcceptRace" class="btn accept-btn"> Accept </button>
                 </div>';
+    echo json_encode($popUp);
+} else{
+    echo json_encode('norace');
+}
+
+
     
-echo json_encode($popUp);
+
 
     
 
