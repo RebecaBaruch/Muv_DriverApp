@@ -26,13 +26,13 @@
                 <div class="avatar-box">
 
                     <label for="profile-pic">
-                        <img src="../img/profile_pic.png" alt="profile-picture">
+                        <img src="../img/noavatar.png" alt="profile-picture" width="120px" id="driverimg">
                     </label>
                     
                     <input type="file" name="profile-pic" id="profile-pic" class="pic-input">
                 </div>
 
-                <input type="text" name="nome" id="nome" class="profile-input nome-input" value="Nome">
+                <input type="text" name="nome" id="nome" class="profile-input nome-input" placeholder="Qual é o seu nome?" style="width: auto;">
 
                 <div class="bio-box">
                     <label class="txtlabel" for="bio">Bio</label>
@@ -55,27 +55,27 @@
                 <div class="input-box email-box">
                     <label for="email">E-mail</label>
 
-                    <input type="email" name="email" id="email" class="profile-input" value="adreesExemple@gmail.com" disabled>
+                    <input type="email" name="email" id="email" class="profile-input" value="adreesExemple@gmail.com" disabled style="text-align: right;">
                 </div>       
                 
                 <div class="input-box phone-box">
 
-                    <label for="phone">Phone</label>
+                    <label for="phone">Telefone</label>
 
-                    <input type="tel" name="celular" id="phone" class="profile-input" value="55+(13)6545-4418" disabled>
+                    <input type="tel" name="celular" id="phone" class="profile-input" value="55+(13)6545-4418" disabled style="text-align: right;">
                 </div>
 
                 <div class="input-box birth-box">
                     
-                    <label for="birth">Birth</label>
+                    <label for="birth">Data de nascimento</label>
 
-                    <input type="date" name="nascimento" id="birth" class="profile-input" value="11/08/2002">
+                    <input type="date" name="nascimento" id="birth" class="profile-input birthInput" value="11/08/2002" style="text-align: right;">
                 </div>
 
                 <div class="input-box password-box">
-                    <label for="password">Password</label>
+                    <label for="password">Senha</label>
 
-                    <input type="password" name="password" id="password" class="profile-input" value="12345678" disabled>
+                    <input type="password" name="password" id="password" class="profile-input" value="12345678" disabled style="text-align: right;">
                 </div>
 
                 <div class="payment-box">
@@ -103,6 +103,28 @@
     </div>
 </body>
 <script>
+    $('#profile-pic').change(() =>{        
+        var file_data = $('#profile-pic').prop('files')[0];
+        var form_data = new FormData();
+
+        if (file_data != undefined) {
+            form_data.append('file', file_data);
+            $.ajax({
+                url: "http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/alterarImagem.php",
+                type: "POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                    console.log('foto alterada!')
+                    $('#driverimg').attr('src', `../driverimg/${data}`)
+                }
+            });
+        }
+    })
+
     $(document).ready(function (){
         $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/sessao.php', function (result) {
             $('#email').val(result.email)
@@ -127,7 +149,7 @@
                 processData: false,
                 success: function (data) {
                     console.log(data)
-                    $('.userImg').attr('src', `userimg/${data}`)
+                    $('.userImg').attr('src', `../driverimg/${data}`)
                 }
             });
         }

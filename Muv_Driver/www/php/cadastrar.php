@@ -7,7 +7,7 @@ $telefone = $_POST['telefone'];
 
     $queryValidacao = mysqli_query($con, "select * from motorista where email='$email'");
     if(mysqli_num_rows($queryValidacao) != 0){
-        echo 'error';
+        echo 'ja existe um usuario!';
     }else{
         $query = mysqli_query($con, "INSERT INTO motorista (email, senha, telefone) VALUES ('$email', '$senha', '$telefone')");            
             if($query){                
@@ -19,7 +19,7 @@ $telefone = $_POST['telefone'];
                 echo 'success';
             }            
             else{
-            echo 'error';
+            echo 'erro ao cadastrar';
             }
 
         }

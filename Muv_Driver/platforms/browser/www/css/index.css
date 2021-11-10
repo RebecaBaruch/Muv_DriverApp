@@ -25,6 +25,11 @@
     margin: 0;
 }
 
+.birthInput::-webkit-inner-spin-button,
+.birthInput::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
 #map{
     height: 100%;
     width: 100%;
@@ -659,11 +664,8 @@ footer{
 .init-body{
     width: 100vw;
     height: 100vh;
-<<<<<<< Updated upstream
-=======
 
     /* background-color: #121212; */
->>>>>>> Stashed changes
 }
 
 .init-container{
@@ -889,11 +891,8 @@ footer{
     padding: 1.5rem 2rem;
     width: 70%;
     border-radius: 20px;
-<<<<<<< Updated upstream
-=======
     z-index: 1;
     background-color: white;
->>>>>>> Stashed changes
 }
 
 .profileRace-container{
