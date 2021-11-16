@@ -5,8 +5,8 @@ function iniciar() {
 }
 // definindo o local atual
 function geoSucess(dados) {
-    var lat = dados.coords.latitude
-    var lon = dados.coords.longitude
+    var lat = -24.503526
+    var lon = -47.841455
 
     localStorage.setItem('latitu', lat)
     localStorage.setItem('longitu', lon)
@@ -25,7 +25,7 @@ function geoSucess(dados) {
         },
         success: function (r) {
             console.log("foi!");
-            // initMap();
+            localStorage.setItem('localPlaceId', r.results[0].place_id)
         }
     })
 

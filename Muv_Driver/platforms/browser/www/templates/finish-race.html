@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
+    <title>Pagamento</title>
+</head>
+<body class="fRace-body">
+
+    <div class="fRace-container">
+        <div class="finishPro-container">
+            <figure class="finishPic-client">
+                <img src="../img/proPic-user.png" alt="client-profile-photo">
+            </figure>
+    
+            <div class="finishPro-txt">
+                <h1 class="p-title">Nome do Cliente</h1>
+
+                <div class="defSpe-box def-RaceSpe">
+                    <figure>
+                        <img src="../img/hand-icon.png" alt="hand-icon">
+                    </figure>
+    
+                    <p class="p-txt"> Surdo</p>
+                </div>
+            </div>
+    
+            <figure>
+                <img src="../img/stars-ava.png" alt="stars-icon-avaliation">
+            </figure>
+        </div>
+    
+        <div class="race-container location-RaceSpe">
+            <div class="dot-container">
+                <div class="dot black-dot"></div>
+                
+                <div class="trace-div"></div>
+    
+                <div class="dot green-dot"></div>
+            </div>
+    
+            <div class="localRequest-container">
+                <div class="local-box pickUp-box">
+                    <h2 class="localType-title">Pick Up</h2>
+                    <div class="localTxt-row local-txt"> 
+                      <p> R. Location Example </p>
+                      <p> 09:10 AM</p>
+                    </div>
+                </div>
+    
+                <div class="local-box dropOff-box">
+                    <h2 class="localType-title">Drop Off</h2>
+                    <div class="localTxt-row local-txt">
+                      <p> R. Destiny Example </p>
+                      <p> 09:20 AM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="raceData-container">
+            <div class="raceData-col">
+                <p class="p-title">10min</p>
+                <p class="p-title">Distance: 14km</p>
+            </div>
+    
+            <div class="raceData-col raceData-col2">
+                <p class="p-txt f-price"> preço final</p>
+                <p class="p-title fPrice-txt"> R$10,00</p>
+            </div>
+        </div>
+    
+        <div class="selectPay-container">
+            <h1 class="p-title">SELECIONE UMA OPÇÃO DE PAGAMENTO</h1>
+            
+            <div class="payOp-container">
+                <div class="payOp-row"> 
+                    <label class="payOp-txt" for="card-op"> Cartão </label>
+                    <input type="checkbox" name="card-op" id="card-op" class="checkbox-style">
+                </div>
+    
+                <div class="payOp-row"> 
+                    <label class="payOp-txt" for="money"> Dinheiro </label>
+                    <input type="checkbox" name="money" id="money">
+                </div>
+    
+                <div class="payOp-row"> 
+                    <label class="payOp-txt" for="pix"> 
+                        Pix
+                    </label>
+    
+                    <label class="subTxt-pix" for="pix"> <a href=""> gerar qr code </a> </label>
+                    <input type="checkbox" name="pix" id="pix">
+                </div>
+            </div>
+        </div>
+    
+        <button class="btn finishRace-btn"> FINALIZAR CORRIDA </button>
+    </div>
+</body>
+</html>

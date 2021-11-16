@@ -145,9 +145,14 @@
         })
     })
     $('#btnAcceptRace').click(() => {
+        let localDriver = localStorage.getItem('localPlaceId')
+        let string = `localdriver=${localDriver}`
         $.ajax({
-            type: "POST",
-            url: "http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/confirmarCorrida.php",
+            type: "POST",            
+            url: `http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/confirmarCorrida.php`,
+            data: string,
+            crossDomain: true,
+            cache: false,
             success: function (data) {
                 location.href = 'race.html'
             }
