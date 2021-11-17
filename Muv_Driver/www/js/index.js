@@ -45,10 +45,20 @@ function initMap() {
         center: meulocal,
         disableDefaultUI: true,
     });
+    var customMarker = new google.maps.MarkerImage(
+        // URL
+        '../../img/driverMarker2.png',
+        // (width,height)
+        new google.maps.Size(100, 100),
+        // The origin point (x,y)
+        new google.maps.Point(0, 0),
+        // The anchor point (x,y)
+        new google.maps.Point(25, 32)
+);
     var marker = new google.maps.Marker({
         position: meulocal,
         map: map,
-        animation: google.maps.Animation.DROP
+        icon: customMarker,
     });
 
     const contentString = '<h3>Seu local atual!</h3>';
