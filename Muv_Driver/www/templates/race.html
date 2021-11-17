@@ -20,12 +20,13 @@
                 <img src="../img/back-btn-black.png" alt="back-button-icon">
             </button>
 
-            <h1 class="p-title"> Pick Up</h1>
+            <h1 id="txtHeader" class="p-title">Buscar</h1>
         </header>
         <div id="map"></div>
         <!-- pickup popup  -->
 
-        <div class="pickUp-container" style="display: flex;position: absolute;bottom: 2em;">
+        <div class="pickUp-container"
+            style="display: flex;position: absolute;bottom: 2em;box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);">
             <div class="local-row">
                 <div class="localTxt-row">
                     <p class="p-title">Busque ele em</p>
@@ -62,19 +63,20 @@
 
 
         <!-- start race popup  -->
-        <div class="startRace-container">
+        <div class="startRace-container"
+            style="display: none;position: absolute;bottom: 0;box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);">
 
             <div class="startRace-content">
                 <div class="local-row">
                     <div class="localTxt-row">
                         <p class="p-txt">Deixar em</p>
-                        <p class="p-txt">10KM</p>
+                        <p id="distanceFromFinish" class="p-txt">10KM</p>
                     </div>
 
                     <div class="destiny-row">
-                        <p class="p-title local-title">R. Destino de Exemplo</p>
+                        <p id="txtEndDestino" class="p-title local-title">R. Destino de Exemplo</p>
 
-                        <p class="p-title local-title race-price">R$15,00</p>
+                        <p id="txtPreco" class="p-title local-title race-price">R$15,00</p>
                     </div>
                 </div>
 
@@ -83,45 +85,47 @@
                         <img src="../img/proPic-user.png" alt="user-profile-photo">
                     </figure>
 
-                    <p class="p-title proStart-nome"> Nome do Cliente </p>
+                    <p id="clientNameRace" class="p-title proStart-nome"> Nome do Cliente </p>
 
-                    <div class="defSpe-box def-RaceSpe defSpe-pickUp">
+                    <div class="defSpe-box def-RaceSpe defSpe-pickUp" style="width: 4em;">
                         <figure>
                             <img src="../img/hand-icon.png" alt="hand-icon">
                         </figure>
 
-                        <p> Surdo</p>
+                        <p id="clientEspecRace"> Surdo</p>
                     </div>
                 </div>
 
-                <button class="btn start-btn pickUp-btn p-title">
+                <button id="startRace" class="btn start-btn pickUp-btn p-title">
                     COMEÇAR A CORRIDA
                 </button>
             </div>
         </div>
 
-        <div class="route-container" style="display: none;">
+        <div class="route-container"
+            style="display: none;position: absolute;bottom: 0;box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);">
             <div class="local-row">
                 <div class="localTxt-row">
                     <p class="p-txt">Deixar em</p>
-                    <p class="p-txt">10KM</p>
+                    <p id="txtDistanceFinishRoute" class="p-txt">10KM</p>
                 </div>
 
                 <div class="destiny-row">
-                    <p class="p-title local-title">R. Destino de Exemplo</p>
+                    <p id="txtDestinoRota" class="p-title local-title">R. Destino de Exemplo</p>
                 </div>
             </div>
 
             <div class="instructions-row">
                 <figure class="dir-icon">
-                    <img src="../img/turn-arrow.png" alt="turn-left-icon">
+                    <!-- <img src="../img/turn-arrow.png" alt="turn-left-icon"> -->
+                    <img src="https://img.icons8.com/ios-filled/24/000000/long-arrow-up.png"/>
                 </figure>
 
-                <p class="p-title">
+                <p id="txtDistanceStep" class="p-title">
                     <span>500</span>m
                 </p>
 
-                <p class="p-txt instru-dir"> R. Rua de Exemplo</p>
+                <p id="txtStreetStep" class="p-txt instru-dir"> R. Rua de Exemplo</p>
             </div>
         </div>
 
@@ -130,7 +134,12 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABnuQpgsqSITzefoNMys4iXmfgWlXqEfk&callback=pickUpMap&v=weekly"
         async></script>
     <script>
+        markers = []
         function pickUpMap() {
+            const directionsRenderer = new google.maps.DirectionsRenderer({
+                suppressMarkers: true
+            });
+            const directionsService = new google.maps.DirectionsService();
 
             var lat = parseFloat(localStorage.getItem('latitu'));
             var lon = parseFloat(localStorage.getItem('longitu'));
@@ -146,7 +155,7 @@
                     // The origin point (x,y)
                     new google.maps.Point(0, 0),
                     // The anchor point (x,y)
-                    new google.maps.Point(32, 20)
+                    new google.maps.Point(42, 30)
                 ),
                 end: new google.maps.MarkerImage(
                     // URL
@@ -161,18 +170,22 @@
             };
 
             function makeMarker(position, icon, title) {
-                new google.maps.Marker({
+                const marker = new google.maps.Marker({
                     position: position,
                     map: map,
                     icon: icon,
                     title: title
                 });
+                markers.push(marker)
             }
-
-            const directionsRenderer = new google.maps.DirectionsRenderer({
-                suppressMarkers: true
-            });
-            const directionsService = new google.maps.DirectionsService();
+            function setMapOnAll(map) {
+                for (let i = 0; i < markers.length; i++) {
+                    markers[i].setMap(map);
+                }
+            }
+            function hideMarkers() {
+                setMapOnAll(null);
+            }
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 14,
                 center: driverLocal,
@@ -181,11 +194,17 @@
 
 
             $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/dadoscorrida.php', function (result) {
-                $('#clientName').text(result.nome)
-                $('#clientEspec').text(result.especificacao)
-                $('#clientLocal').text(result.endOrigem)
+                let endDestino = result.endDestino
+                let endOrigem = result.endOrigem
+                let precoCorrida = result.preco
+                let clientName = result.nome
+                let clientEspec = result.especificacao
 
-                let clientlocal = result.endOrigem
+                $('#clientName').text(clientName)
+                $('#clientEspec').text(clientEspec)
+                $('#clientLocal').text(endOrigem)
+
+                let clientlocal = endOrigem
 
                 directionsRenderer.setMap(map);
                 directionsService
@@ -205,12 +224,54 @@
                         $('#distanceFromClient').text(response.routes[0].legs[0].distance.text)
                     })
                     .catch((e) => window.alert("Directions request failed due to " + status));
+
+                setTimeout(function startRace() {
+                    $('.pickUp-container').hide()
+                    $('#txtHeader').text('Levar')
+                    $('.startRace-container').css('display', 'flex')
+
+                    $('#txtPreco').text(precoCorrida)
+                    $('#txtEndDestino').text(endDestino)
+                    $('#clientNameRace').text(clientName)
+                    $('#clientEspecRace').text(clientEspec)
+
+                    directionsRenderer.setMap(map);
+                    directionsService
+                        .route({
+                            origin: endOrigem,
+                            destination: endDestino,
+                            travelMode: google.maps.TravelMode.DRIVING
+                            // Note that Javascript allows us to access the constant
+                            // using square brackets and a string value as its
+                            // "property."
+                        })
+                        .then((response) => {
+                            directionsRenderer.setDirections(response)
+                            $('#distanceFromFinish').text(response.routes[0].legs[0].distance.text)
+                            var leg = response.routes[0].legs[0];
+                            hideMarkers()
+                            markers = []
+                            makeMarker(leg.start_location, icons.start, "title");
+                            makeMarker(leg.end_location, icons.end, 'title');
+                            console.log(response)
+                            $('#startRace').click(() => {
+                                $('.startRace-container').hide()
+                                $('.route-container').show()
+
+                                $('#txtDestinoRota').text(endDestino)
+                                $('#txtStreetStep').html(response.routes[0].legs[0].steps[0].instructions)
+                                $('#txtDistanceFinishRoute').text(response.routes[0].legs[0].distance.text)
+                                $('#txtDistanceStep').text(response.routes[0].legs[0].steps[0].distance.text)
+                                
+                                console.log(response.routes[0].legs[0].steps[0])
+                            })
+                        })
+                }, 500)
             })
 
 
 
         }
-
     </script>
 </body>
 
