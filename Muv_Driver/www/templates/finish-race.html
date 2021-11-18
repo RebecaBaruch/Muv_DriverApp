@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <title>Pagamento</title>
 </head>
 <body class="fRace-body">
@@ -18,14 +18,14 @@
             </figure>
     
             <div class="finishPro-txt">
-                <h1 class="p-title">Nome do Cliente</h1>
+                <h1 id="clientName" class="p-title">Nome do Cliente</h1>
 
                 <div class="defSpe-box def-RaceSpe">
                     <figure>
                         <img src="../img/hand-icon.png" alt="hand-icon">
                     </figure>
     
-                    <p class="p-txt"> Surdo</p>
+                    <p id="clientEspec" class="p-txt"> Surdo</p>
                 </div>
             </div>
     
@@ -47,7 +47,7 @@
                 <div class="local-box pickUp-box">
                     <h2 class="localType-title">Pick Up</h2>
                     <div class="localTxt-row local-txt"> 
-                      <p> R. Location Example </p>
+                      <p id="clientLocal" > R. Location Example </p>
                       <p> 09:10 AM</p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="local-box dropOff-box">
                     <h2 class="localType-title">Drop Off</h2>
                     <div class="localTxt-row local-txt">
-                      <p> R. Destiny Example </p>
+                      <p id="clientDestino" > R. Destiny Example </p>
                       <p> 09:20 AM</p>
                     </div>
                 </div>
@@ -64,13 +64,13 @@
     
         <div class="raceData-container">
             <div class="raceData-col">
-                <p class="p-title">10min</p>
-                <p class="p-title">Distance: 14km</p>
+                <p id="txtTempoTotal" class="p-title">10min</p>
+                <p id="txtDistanciaTotal" class="p-title">Distance: 14km</p>
             </div>
     
             <div class="raceData-col raceData-col2">
                 <p class="p-txt f-price"> preço final</p>
-                <p class="p-title fPrice-txt"> R$10,00</p>
+                <p id="txtPreco" class="p-title fPrice-txt"> R$10,00</p>
             </div>
         </div>
     
@@ -80,12 +80,12 @@
             <div class="payOp-container">
                 <div class="payOp-row"> 
                     <label class="payOp-txt" for="card-op"> Cartão </label>
-                    <input type="checkbox" name="card-op" id="card-op" class="checkbox-style">
+                    <input type="radio" name="payment" id="card-op" class="checkbox-style">
                 </div>
     
                 <div class="payOp-row"> 
                     <label class="payOp-txt" for="money"> Dinheiro </label>
-                    <input type="checkbox" name="money" id="money">
+                    <input type="radio" name="payment" id="money">
                 </div>
     
                 <div class="payOp-row"> 
@@ -94,12 +94,42 @@
                     </label>
     
                     <label class="subTxt-pix" for="pix"> <a href=""> gerar qr code </a> </label>
-                    <input type="checkbox" name="pix" id="pix">
+                    <input type="radio" name="payment" id="pix">
                 </div>
             </div>
         </div>
     
-        <button class="btn finishRace-btn"> FINALIZAR CORRIDA </button>
+        <button id="finishRaceBtn" class="btn finishRace-btn"> FINALIZAR CORRIDA </button>
     </div>
+    <script>
+        $(document).ready(()=>{
+            $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/dadoscorrida.php', function (result) {
+                let endDestino = result.endDestino
+                let endOrigem = result.endOrigem
+                let precoCorrida = result.preco
+                let clientName = result.nome
+                let clientEspec = result.especificacao
+                let tempoCorrida = result.tempo
+                let distanciaCorrida = result.distancia
+
+                $('#clientName').text(clientName)
+                $('#clientEspec').text(clientEspec)
+                $('#clientLocal').text(endOrigem)
+                $('#clientDestino').text(endDestino)
+                $('#txtPreco').text(precoCorrida)
+                $('#txtTempoTotal').text(tempoCorrida)
+                $('#txtDistanciaTotal').text(distanciaCorrida)
+            })
+
+            
+            $('.payOp-txt,input[type=radio]').click(()=>{
+                $('#finishRaceBtn').css('background-color','#063DFF')
+            })
+            $('#finishRaceBtn').click(()=>{
+                location.href = 'init-screen.html'
+            })
+        })
+
+    </script>
 </body>
 </html>

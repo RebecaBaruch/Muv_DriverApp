@@ -118,7 +118,7 @@
             <div class="instructions-row">
                 <figure class="dir-icon">
                     <!-- <img src="../img/turn-arrow.png" alt="turn-left-icon"> -->
-                    <img src="https://img.icons8.com/ios-filled/24/000000/long-arrow-up.png"/>
+                    <img src="https://img.icons8.com/ios-filled/24/000000/long-arrow-up.png" />
                 </figure>
 
                 <p id="txtDistanceStep" class="p-title">
@@ -262,11 +262,15 @@
                                 $('#txtStreetStep').html(response.routes[0].legs[0].steps[0].instructions)
                                 $('#txtDistanceFinishRoute').text(response.routes[0].legs[0].distance.text)
                                 $('#txtDistanceStep').text(response.routes[0].legs[0].steps[0].distance.text)
-                                
+
                                 console.log(response.routes[0].legs[0].steps[0])
+                                setTimeout(() => {
+                                    location.href = 'finish-race.html'
+                                },5000)
                             })
                         })
-                }, 500)
+                }, 10000)
+
             })
 
 
