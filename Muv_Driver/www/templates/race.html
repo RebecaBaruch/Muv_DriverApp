@@ -253,28 +253,36 @@
                             markers = []
                             makeMarker(leg.start_location, icons.start, "title");
                             makeMarker(leg.end_location, icons.end, 'title');
-                            console.log(response)
                             $('#startRace').click(() => {
-                                $('.startRace-container').hide()
-                                $('.route-container').show()
+                                $.ajax({
+                                    url: 'http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/iniciarCorrida.php',
+                                    success: function (data) {
+                                        if (data === 'iniciada') {
+                                            $('.startRace-container').hide()
+                                            $('.route-container').show()
 
-                                $('#txtDestinoRota').text(endDestino)
-                                $('#txtStreetStep').html(response.routes[0].legs[0].steps[0].instructions)
-                                $('#txtDistanceFinishRoute').text(response.routes[0].legs[0].distance.text)
-                                $('#txtDistanceStep').text(response.routes[0].legs[0].steps[0].distance.text)
+                                            $('#txtDestinoRota').text(endDestino)
+                                            $('#txtStreetStep').html(response.routes[0].legs[0].steps[0].instructions)
+                                            $('#txtDistanceFinishRoute').text(response.routes[0].legs[0].distance.text)
+                                            $('#txtDistanceStep').text(response.routes[0].legs[0].steps[0].distance.text)
 
-                                console.log(response.routes[0].legs[0].steps[0])
-                                setTimeout(() => {
-                                    location.href = 'finish-race.html'
-                                },5000)
+                                            setTimeout(() => {
+                                                $.ajax({
+                                                    url: 'http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/finalizarCorrida.php',
+                                                    success: function(r){
+                                                        console.log('corrida finalizada!')
+                                                        location.href = 'finish-race.html'
+                                                    }
+                                                })
+                                            }, 5000)
+                                        }else console.log('nao iniciada!')
+                                    }
+                                })
                             })
                         })
-                }, 10000)
+                }, 5000)
 
             })
-
-
-
         }
     </script>
 </body>
