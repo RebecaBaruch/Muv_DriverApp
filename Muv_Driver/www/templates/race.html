@@ -267,13 +267,7 @@
                                             $('#txtDistanceStep').text(response.routes[0].legs[0].steps[0].distance.text)
 
                                             setTimeout(() => {
-                                                $.ajax({
-                                                    url: 'http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/finalizarCorrida.php',
-                                                    success: function(r){
-                                                        console.log('corrida finalizada!')
-                                                        location.href = 'finish-race.html'
-                                                    }
-                                                })
+                                                location.href = 'finish-race.html'
                                             }, 5000)
                                         }else console.log('nao iniciada!')
                                     }
