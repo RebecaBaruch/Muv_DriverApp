@@ -19,7 +19,7 @@
                 <div class="start-menu">
 
                     <button class="btn-menu">
-                        <img src="../img/menuBtn-icon.png" alt="menu-button-icon">
+                        <img id="logoutBtn" src="../img/menuBtn-icon.png" alt="menu-button-icon">
                     </button>
 
                     <div class="status-container">
@@ -132,6 +132,14 @@
             $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/sessao.php', function (result) {
                 $('#driverName').text(result.nome)
                 $('#driverImg').attr('src', `../driverimg/${result.imgperfil}`)                
+        })
+        $('#logoutBtn').click(()=>{
+            $.ajax({
+                url: 'http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/logout.php',
+                success: function(){
+                    location.href = 'login.html'
+                }
+            })
         })
     }) 
 
