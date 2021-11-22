@@ -160,6 +160,27 @@
     color: #2e2e2e;
 }
 
+/* formatação loading.html*/
+
+.loading-container{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.loading-gif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-gif > img{
+    width: 75%;
+}
+
 /* formatação da login.html*/
 
 .login-container{
