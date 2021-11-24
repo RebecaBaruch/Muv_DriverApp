@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 
-                <div class="statusAlert-container">
+                <div id="statusBox" class="statusAlert-container">
 
                     <div class="status-box offline-box">
                         <div class="txtStatus-box">
@@ -169,14 +169,19 @@
             })
 
             const popUpRace = document.querySelector('.raceRequest-container')
-            
+            const statusBoxFade = () => {
+                        setTimeout(()=>{
+                        $('#statusBox').slideUp(500)
+                    },3000)
+                }
             statusBtn.addEventListener('click', () =>{
                 if(statusBtn.checked){
+                    statusBoxFade()
                 const showRace = setInterval(() => {
                     $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/popupcorrida.php', function (result) {
                         if(result != 'norace'){
                             popUpRace.innerHTML = result
-                            popUpRace.style.display = "flex";
+                            popUpRace.style.display = "flex";                            
 
                             const acceptRace = document.querySelector('#btnAcceptRace')
                             acceptRace.addEventListener('click', () =>{
@@ -190,6 +195,7 @@
                     })
                 }, 1000);                                    
                 } else {
+                    clearTimeout(statusBoxFade)
                     console.log('offline')                 
                 }
 
