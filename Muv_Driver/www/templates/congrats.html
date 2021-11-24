@@ -21,7 +21,11 @@
 <script>
     $(document).ready(()=>{
         setInterval(() => {
-            location.href = 'explorer.html'
+            $('.mtBem-txt').fadeOut(100)
+            $('.vcJa-txt').show(500)
+            setInterval(() => {
+                location.href = 'edit_profile.html'
+            }, 5000);
         }, 5000);
     })
 </script>
