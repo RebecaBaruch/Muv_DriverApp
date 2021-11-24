@@ -443,6 +443,10 @@
     width: 50%;
 }
 
+.vcJa-txt, .foguete-icon{
+    display: none;
+}
+
 /* formatação pre_doc.html */
 
 .preDoc-body{
