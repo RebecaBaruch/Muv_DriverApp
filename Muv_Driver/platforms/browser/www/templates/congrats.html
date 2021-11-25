@@ -12,12 +12,21 @@
 </head>
 <body>
     <div class="cong-container">
-            <img src="../img/mt-bem.png" alt="">
+            <img src="../img/mt-bem.png" class="mtBem-txt" alt="">
+            <img src="../img/vc-ja-sabe.png" class="vcJa-txt" alt="">
+
+            <img src="../img/foguete-icon.png" class="foguete-icon" alt="">
     </div>
 </body>
 <script>
     $(document).ready(()=>{
-        location.href = 'explorer.html'
-    },5000)
+        setInterval(() => {
+            $('.mtBem-txt').fadeOut(100)
+            $('.vcJa-txt').show(500)
+            setInterval(() => {
+                location.href = 'edit_profile.html'
+            }, 5000);
+        }, 5000);
+    })
 </script>
 </html>

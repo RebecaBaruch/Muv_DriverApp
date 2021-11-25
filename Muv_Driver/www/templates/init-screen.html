@@ -131,80 +131,82 @@
         $(document).ready(function (){
             $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/sessao.php', function (result) {
                 $('#driverName').text(result.nome)
-                $('#driverImg').attr('src', `../driverimg/${result.imgperfil}`)                
-        })
-        $('#logoutBtn').click(()=>{
-            $.ajax({
+                $('#driverImg').attr('src', `../driverimg/${result.imgperfil}`)
+            })
+            $('#logoutBtn').click(()=>{
+                $.ajax({
                 url: 'http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/logout.php',
                 success: function(){
                     location.href = 'login.html'
-                }
+                    }
+                })
             })
-        })
-    }) 
-
-            const statusBtn = document.querySelector("#status-btn");
-
-            const offBox = document.querySelector(".offline-box");
-            const onBox = document.querySelector(".online-box");
-            const statusTxt = document.querySelector("#status-header");
-            const proPreview = document.querySelector(".profile-preview");
-
-            statusBtn.addEventListener("click", function(){
-                if(statusBtn.checked){
-                    offBox.style.display = "none";
-                    onBox.style.display = "flex";
-
-                    statusTxt.innerHTML = "Online";
-                    proPreview.style.display = "none";                    
-                }
-                else {
-                    onBox.style.display = "none";
-                    offBox.style.display = "flex";
-
-                    statusTxt.innerHTML = "Offline";
-                    proPreview.style.display = "flex";
-                    popUpRace.style.display = "none";
-                }
-            })
-
-            const popUpRace = document.querySelector('.raceRequest-container')
-            const statusBoxFade = () => {
-                        setTimeout(()=>{
-                        $('#statusBox').slideUp(500)
-                    },3000)
-                }
-            statusBtn.addEventListener('click', () =>{
-                if(statusBtn.checked){
-                    statusBoxFade()
-                const showRace = setInterval(() => {
+            function showRace (){
+                const race = setInterval(() => {
                     $.getJSON('http://127.0.0.1/Muv_DrvierApp/Muv_Driver/www/php/popupcorrida.php', function (result) {
                         if(result != 'norace'){
-                            popUpRace.innerHTML = result
-                            popUpRace.style.display = "flex";                            
+                            statusBoxFade()
+                            $('.raceRequest-container').html(result)
+                            $('.raceRequest-container').css('display', 'flex')                           
 
                             const acceptRace = document.querySelector('#btnAcceptRace')
                             acceptRace.addEventListener('click', () =>{
                                 location.href = 'race-specification.html'
                             })
-
-                            clearInterval(showRace)
+                            clearInterval(race)
                         }else{
-                            console.log('sem corridas!')
+                            return console.log('sem corridas!')
                         }                                        
                     })
-                }, 1000);                                    
+                }, 1000);
+            } 
+            const statusBoxFade = () => {
+                setTimeout(()=>{
+                    $('#statusBox').slideUp(500)
+                },3000)
+            }
+
+            const statusBtn = document.querySelector("#status-btn");
+
+            
+            const OnlineStatus = () =>{
+                $('.offline-box').css('display', 'none')
+                $('.online-box').css('display', 'flex')
+                $('.profile-preview').css('display', 'none')
+                $('#status-header').text('Online')
+            }
+            const OfflineStatus = () =>{
+                $('.offline-box').css('display', 'flex')
+                $('.online-box').css('display', 'none')
+                $('.profile-preview').css('display', 'flex')
+                $('.raceRequest-container').css('display', 'none')
+                $('#status-header').text('Offline')
+
+            }
+
+            if(localStorage.getItem('onlineStatus') === 'online'){
+                    $('#status-btn').attr('checked', true)
+                    OnlineStatus()
+                    showRace()
                 } else {
+                    $('#status-btn').attr('checked', false)
+                    OfflineStatus()
+            }
+
+            $('#status-btn').click(()=>{
+                if(statusBtn.checked){
+                    localStorage.setItem('onlineStatus', 'online')
+                    OnlineStatus()
+                    statusBoxFade()
+                    showRace()                    
+                } else {
+                    localStorage.setItem('onlineStatus', 'offline')
+                    OfflineStatus()
                     clearTimeout(statusBoxFade)
                     console.log('offline')                 
-                }
-
-            })
-            
-            
-            
-
-
+            }
+        })
+    })
     </script>
 </body>
 </html>
