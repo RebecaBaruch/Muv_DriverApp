@@ -1,4 +1,4 @@
-#Muv_DriverApp
+<h1> Muv_DriverApp </h1>
  
  
 O  Muv - DriverApp é a segunda parte de um trabalho de conclusão de curso de DS da ETEC de Registro/SP, realizado pela equipe 2Circle.
@@ -13,7 +13,7 @@ Caso possua, o app será adaptado para melhor atendê-lo. Caso não, o usuário 
 
 Além disso o app conta com sistema de chat e ferramentas que garantem a comunicação clara entre motorista e cliente, sempre atendendo às necessidades dos gurpos específicos de deficientes.
 
-#Ferramentas
+<h1> Ferramentas </h1>
 
 <ul>
  <li> HTML </li>
