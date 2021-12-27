@@ -13,7 +13,7 @@ Caso possua, o app será adaptado para melhor atendê-lo. Caso não, o usuário 
 
 Além disso o app conta com sistema de chat e ferramentas que garantem a comunicação clara entre motorista e cliente, sempre atendendo às necessidades dos gurpos específicos de deficientes.
 
-<h1> Ferramentas </h1>
+<h2> Ferramentas </h2>
 
 <ul>
  <li> HTML </li>
