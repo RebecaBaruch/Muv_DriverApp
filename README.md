@@ -21,5 +21,5 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
  <li> CSS </li>
  <li> Phonegap </li>
  <li> Google Maps API </li>
- <li> Figma (para prototipagem) <li>
+ <li> Figma (para prototipagem) </li>
  </ul>
