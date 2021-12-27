@@ -5,7 +5,7 @@ O  Muv - DriverApp é a segunda parte de um trabalho de conclusão de curso de D
 
 Ele se trata de um app de corrida, do lado do motorista, que foca na acessibilidade de PCDs (pessoas com deficiência) dentro e fora do aplicativo.
 
-#Como garantimos a acessibilidade?
+<h2> Como garantimos a acessibilidade? </h2>
 
 A ideia inicial do projeto é garantir que motoristas e e clientes PCDs possam desfrutar da melhor maneira os serviços oferecidos pelo aplicativo.
 Dentro do app do motorista, o usuário poderá fornecer informações e dados pessoais para montar o seu perfil, além de informar se possui alguma deficiência.
