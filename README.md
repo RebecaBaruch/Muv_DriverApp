@@ -1,4 +1,4 @@
-<img src= 'Muv_DrvierApp\Muv_Driver\www\img\banner_muv.png'>
+<img src= 'www\img\banner_muv.png'>
 
 <h1> Muv - DriverApp </h1>
  
