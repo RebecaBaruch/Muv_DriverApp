@@ -1,3 +1,11 @@
+<style>
+  .li{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+ }
+</style>
+
 
 ![Screenshot](Muv_Driver/www/img/banner_muv.png)
 
@@ -30,7 +38,7 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 <h2> Nosso time </h2>
 
 <ul>
- <li> Rebeca Baruch  
+ <li class="li"> Rebeca Baruch  
   <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/40/000000/github-2.png" "/> </a>
  </li>
   
