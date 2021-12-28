@@ -46,5 +46,6 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
  <li > Vinicius Muniz (Dev Web Back-End e revisor de doc)
   <a href="https://github.com/muniz19" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
  </li>
+ 
 </ul>
   
