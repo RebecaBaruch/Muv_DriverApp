@@ -27,6 +27,7 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
  </ul>
 
 <h2> Nosso time </h2>
+
 ![Screenshot](Muv_Driver/www/img/banner_2circle.png)
 
 <ul>
