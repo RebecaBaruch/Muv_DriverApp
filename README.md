@@ -1,12 +1,3 @@
-<style>
-  .li{
-    display: flex;
-    justify-content: start;
-    align-items: center;
- }
-</style>
-
-
 ![Screenshot](Muv_Driver/www/img/banner_muv.png)
 
 <h1> Muv - DriverApp </h1>
@@ -38,9 +29,20 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 <h2> Nosso time </h2>
 
 <ul>
- <li class="li"> Rebeca Baruch  
-  <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/40/000000/github-2.png" "/> </a>
+ <li > Rebeca Baruch  
+  <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/40/000000/github-2.png"/> </a>
  </li>
   
+ <li > Renan ALves
+  <a href="https://github.com/zum4258" vertical-align="center"> <img src="https://img.icons8.com/color-glass/40/000000/github-2.png"/> </a>
+ </li>
+ 
+ <li > Vinicius Leal Alves
+  <a href="https://github.com/lealalves" vertical-align="center"> <img src="https://img.icons8.com/color-glass/40/000000/github-2.png"/> </a>
+ </li>
+ 
+ <li > Vinicius Muniz
+  <a href="https://github.com/muniz19" vertical-align="center"> <img src="https://img.icons8.com/color-glass/40/000000/github-2.png"/> </a>
+ </li>
 </ul>
   
