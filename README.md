@@ -26,3 +26,11 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
  <li> Google Maps API </li>
  <li> Figma (para prototipagem) </li>
  </ul>
+
+<h2> Nosso time </h2>
+
+<ul>
+ <li> Rebeca Baruch  <a href="https://github.com/Berreca2019"> GitHub logo </a>,/li>
+  
+</ul>
+  
