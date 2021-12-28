@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-
-=======
 ![Screenshot](Muv_Driver/www/img/banner_muv.png)
->>>>>>> 9cb7c57d92b42f7628c3168f6651ed032dca4733
 
 <h1> Muv - DriverApp </h1>
  
@@ -29,3 +25,24 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
  <li> Google Maps API </li>
  <li> Figma (para prototipagem) </li>
  </ul>
+
+<h2> Nosso time </h2>
+
+<ul>
+ <li > Rebeca Baruch (Scrum Master, UX Designer, Dev Front-End)
+  <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
+ </li>
+  
+ <li > Renan ALves (Documentador e pesquisador)
+  <a href="https://github.com/zum4258" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
+ </li>
+ 
+ <li > Vinicius Leal Alves (Dev Full-Stack)
+  <a href="https://github.com/lealalves" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
+ </li>
+ 
+ <li > Vinicius Muniz (Dev Web Back-End e revisor de doc)
+  <a href="https://github.com/muniz19" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
+ </li>
+</ul>
+  
