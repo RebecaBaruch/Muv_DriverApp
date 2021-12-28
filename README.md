@@ -30,19 +30,19 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 
 <ul>
  <li > Rebeca Baruch (Scrum Master, UX Designer, Dev Front-End)
-  <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/35/000000/github-2.png"/> </a>
+  <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
  </li>
   
  <li > Renan ALves (Documentador e pesquisador)
-  <a href="https://github.com/zum4258" vertical-align="center"> <img src="https://img.icons8.com/color-glass/35/000000/github-2.png"/> </a>
+  <a href="https://github.com/zum4258" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
  </li>
  
  <li > Vinicius Leal Alves (Dev Full-Stack)
-  <a href="https://github.com/lealalves" vertical-align="center"> <img src="https://img.icons8.com/color-glass/35/000000/github-2.png"/> </a>
+  <a href="https://github.com/lealalves" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
  </li>
  
  <li > Vinicius Muniz (Dev Web Back-End e revisor de doc)
-  <a href="https://github.com/muniz19" vertical-align="center"> <img src="https://img.icons8.com/color-glass/35/000000/github-2.png"/> </a>
+  <a href="https://github.com/muniz19" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
  </li>
 </ul>
   
