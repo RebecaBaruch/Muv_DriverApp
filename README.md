@@ -1,5 +1,5 @@
 
-![Screenshot](Muv_Driver/www/img/banner_muv.png {height="400px")
+![Screenshot](Muv_Driver/www/img/banner_muv.png {height="400px"})
 
 <h1> Muv - DriverApp </h1>
  
