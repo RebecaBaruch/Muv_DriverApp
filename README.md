@@ -28,7 +28,7 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 
 <h2> Nosso time </h2>
 
-![Screenshot](Muv_Drive/www/img/banner_2circle.png)
+![Screenshot](Muv_Driver/www/img/banner_2circle.png)
 
 <ul>
  <li > Rebeca Baruch (Scrum Master, UX Designer, Dev Front-End)
