@@ -30,8 +30,6 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 
 ![Screenshot](Muv_Driver/www/img/banner_2circle.png)
 
-vamo ve se funciona
-
 <ul>
  <li > Rebeca Baruch (Scrum Master, UX Designer, Dev Front-End)
   <a href="https://github.com/Berreca2019" vertical-align="center"> <img src="https://img.icons8.com/color-glass/30/000000/github-2.png"/> </a>
