@@ -31,7 +31,7 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 
 <ul>
  <li> Rebeca Baruch  
-  <a href="https://github.com/Berreca2019"> <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png"/> </a>
+  <a href="https://github.com/Berreca2019"> <img src="https://img.icons8.com/fluency-systems-regular/48/000000/github.png"/> </a>
  </li>
   
 </ul>
