@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+![Screenshot](Muv_Driver/www/img/banner_muv.png)
+>>>>>>> 9cb7c57d92b42f7628c3168f6651ed032dca4733
 
 <h1> Muv - DriverApp </h1>
  
