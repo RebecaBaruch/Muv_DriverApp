@@ -30,8 +30,8 @@ Além disso o app conta com sistema de chat e ferramentas que garantem a comunic
 <h2> Nosso time </h2>
 
 <ul>
- <li> Rebeca Baruch  
-  <a href="https://github.com/Berreca2019"> <img src="https://img.icons8.com/fluency-systems-regular/48/000000/github.png"/> </a>
+ <li align="center"> Rebeca Baruch  
+  <a href="https://github.com/Berreca2019"> <img src="https://img.icons8.com/color-glass/48/000000/github-2.png"/> </a>
  </li>
   
 </ul>
